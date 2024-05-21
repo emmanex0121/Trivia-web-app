@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Start Page</title>
+    <title>Trivia: Play Now</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="/static/scripts/start.js" type="text/javascript"></script> -->
   </head>
   <body>
-    <h1>Start Page</h1>
-    <p>Manipulated Data: {{ data }}</p>
+    <h1>TRIVIA GURU</h1>
+    <form action="/score" method="post" class="form_trivia">
+      <div class="question">
+        <p>{{ question.text | safe }}</p>
+        {% for answer in answers_list %}
+          <input type="radio" class="selected_answer-radio" name="selected_answer" value="{{ answer.text }}" />
+          <label for="selected_answer">{{ answer.text | safe }}</label>
+          <br />
+        {% endfor %}
+      </div>
+      <button class="button_prev" type="button">Previous</button>
+      <button class="button_next" type="button">next</button>
+      <button class="button_submit" type="submit">submit</button>
+    </form>
     <!-- Add content for start page here -->
+    <script src="/static/scripts/start.js" type="text/javascript"></script>
   </body>
 </html>
+<!-- {% for answer in answers_list %}
+  <input type="radio" id="answer_{{ answer.id }}" name="selected_answer" value="{{ answer.id }}" {% if session.get('selected_answer_id') == answer.id %}checked{% endif %}>
+  <label for="answer_{{ answer.id }}">{{ answer.text | safe}}</label><br>
+{% endfor %} -->

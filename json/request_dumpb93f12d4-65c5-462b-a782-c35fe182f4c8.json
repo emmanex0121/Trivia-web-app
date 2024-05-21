@@ -1,0 +1,60 @@
+[
+  {
+    "question": "How many teeth does an adult rabbit have?",
+    "correct_answer": "28",
+    "incorrect_answers": ["30", "26", "24"]
+  },
+  {
+    "question": "Medaka Kurokami from &quot;Medaka Box&quot; has what abnormality?",
+    "correct_answer": "The End",
+    "incorrect_answers": ["Perfection", "Sandbox", "Fairness"]
+  },
+  {
+    "question": "How many regular Sunken Sea Scrolls are there in &quot;Splatoon&quot;?",
+    "correct_answer": "27",
+    "incorrect_answers": ["32", "30", "5"]
+  },
+  {
+    "question": "What was the first Android version specifically optimized for tablets?",
+    "correct_answer": "Honeycomb",
+    "incorrect_answers": ["Eclair", "Froyo", "Marshmellow"]
+  },
+  {
+    "question": "In which classic novel by Mark Twain did a beggar and Prince of Wales switch clothes, and learn about social class inequality?",
+    "correct_answer": "The Prince and the Pauper",
+    "incorrect_answers": [
+      "Hamlet",
+      "Wealthy Boy and the Schmuck",
+      "A Modern Twain Story"
+    ]
+  },
+  {
+    "question": "Which of the following is not the host of a program on NPR?",
+    "correct_answer": "Ben Shapiro",
+    "incorrect_answers": ["Terry Gross", "Ira Glass", "Peter Sagal"]
+  },
+  {
+    "question": "In the DC Comics 2016 reboot, Rebirth, which speedster escaped from the Speed Force after he had been erased from existance?",
+    "correct_answer": "Wally West",
+    "incorrect_answers": ["Johnny Quick", "Jay Garrick", "Eobard Thawne"]
+  },
+  {
+    "question": "When did the Battle of the Bulge end?",
+    "correct_answer": "January 25, 1945",
+    "incorrect_answers": [
+      "August 6, 1945",
+      "December 7, 1941",
+      "December 16, 1944"
+    ]
+  },
+  {
+    "question": "How old was Laurence Fishburne when Francis Ford Coppola cast him in Apocalypse Now (1979)? ",
+    "correct_answer": "14",
+    "incorrect_answers": ["16", "18", "20"]
+  },
+  {
+    "question": "What is the official language of Brazil?",
+    "correct_answer": "Portugese",
+    "incorrect_answers": ["Brazilian", "Spanish", "English"]
+  }
+]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Score</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!-- <script></script> -->
+  </head>
+  <body>
+    <div>score: {{ score | safe }}/10</div>
+    <h2>{{ comment | safe }}</h2>
+    <h4>{{ comment_subtitle | safe }}</h4>
+
+    <div><button class="button_restart">{{ restart | safe }}</button></div>
+
+    <div><button class="button_results-view">View Results</button></div>
+
+    <div><button class="button_home">HOME</button></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/scripts/start.js" type="text/javascript"></script>
+  </body>
+</html>

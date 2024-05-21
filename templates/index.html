@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>My Flask App</title>
-</head>
-<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/scripts/start.js" type="text/javascript"></script>
+  </head>
+  <body>
     <h1>Welcome to My Flask App</h1>
-    <button onclick="start()">Start</button>
-
-    <script>
-        function start() {
-            // Redirect to /start route
-            window.location.href = '/start';
-        }
-    </script>
-</body>
+    <button class="button_start-random">Play Now</button>
+    <a href="/static/html/mode.html" class="button_trivia-mode">Select Mode</a>
+  </body>
 </html>
