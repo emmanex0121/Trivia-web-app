@@ -178,7 +178,7 @@ $(document).ready(function () {
   // gets users current settings/preferences and uses
   // it to start a new game.
   $(".button_restart").on("click", function () {
-    console.log("WORKING FOR HERE");
+    // console.log("WORKING FOR HERE");
     $.ajax({
       type: "POST",
       url: "/submit_mode",
