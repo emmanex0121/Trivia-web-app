@@ -100,11 +100,13 @@ header {
   left: 15rem;
 }
 
-.welcome-heading {
+.welcome-heading,
+.mode_heading {
   text-align: center;
   /* margin-inline: auto; */
   color: var(--black-color);
   margin-block: 2rem;
+  font-size: var(--h2-font-size);
 }
 
 .container_content {
@@ -135,7 +137,8 @@ header {
   z-index: 1;
 }
 .button_start-random,
-.button_trivia-mode {
+.button_trivia-mode,
+.button_trivia-start {
   font-family: var(--body-font);
   font-size: var(--h2-font-size);
   font-weight: var(--font-medium);
@@ -166,15 +169,6 @@ header {
   position: relative;
   left: -7rem;
 }
-/* .video_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--cream-color);
-  opacity: 0.6;
-} */
 
 /* Select mode section */
 .container_right {
@@ -215,7 +209,8 @@ header {
   right: 3.5rem;
 }
 
-.button_trivia-mode {
+.button_trivia-mode,
+.button_trivia-start {
   text-decoration: none;
   color: var(--black-color);
 }
@@ -260,7 +255,8 @@ header {
 }
 
 .button_start-random:hover,
-.button_trivia-mode:hover {
+.button_trivia-mode:hover,
+.button_trivia-start:hover {
   background-color: var(--purple-color-light);
   border: 3px solid var(--yellow-color);
   border-radius: 1rem;
@@ -268,6 +264,64 @@ header {
 .container_foooter-links a:hover {
   color: var(--yellow-color);
 }
+
+/* ======================== MODE PAGE =================== */
+.container_content-mode {
+  margin-inline: auto;
+  width: fit-content;
+  height: 70vh;
+  background-color: #ffffff;
+}
+.container_content-mode form {
+  height: 100%;
+}
+.form_content {
+  height: 100%;
+  display: flex;
+  /* gap: 5rem; */
+  align-items: center;
+
+  position: relative;
+}
+.section_category,
+.section_difficulty,
+.container_button-start {
+  min-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--black-color);
+  font-weight: var(--font-medium);
+}
+.mode_text-top {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+}
+
+.trivia_category,
+.trivia_difficulty {
+  min-width: 20rem;
+  border: 1px solid var(--black-color);
+  padding: 1rem;
+  font-family: var(--body-font);
+  text-align: center;
+  font-size: var(--font-medium);
+
+  transition: 0.5s ease-in-out;
+}
+.trivia_category:hover,
+.trivia_difficulty:hover {
+  background-color: var(--purple-color-light);
+  font-family: var(--body-font);
+  border-radius: 0.5rem;
+  border: 0.3rem solid var(--yellow-color);
+}
+
+/* .container_button-start {
+  min-width: 20rem;
+} */
 
 /* Medium PC SCreen */
 /* @media screen and (max-width: 1740px) {

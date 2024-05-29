@@ -12,12 +12,10 @@
 :root {
   /* ============= Colors ============= */
   /* Color mode HSL(hue, saturation, lightness) */
-  --first-color: hsl(14, 98%, 50%);
+
   --black-color: hsl(0, 0%, 0%);
   --black-color-light: hsl(0, 0%, 40%);
   --white-color: hsl(0, 0%, 95%);
-  --title-color: hsl(0, 0%, 0%);
-  --text-color: hsl(0, 0%, 35%);
   --text-color-light: hsl(0, 0%, 64%);
   --body-color: hsl(0, 0%, 87%);
   --container-color: hsl(0, 0%, 83%);
@@ -98,4 +96,10 @@ header {
   position: relative;
   top: 1rem;
   left: 15rem;
+}
+.welcome-heading {
+  text-align: center;
+  /* margin-inline: auto; */
+  color: var(--black-color);
+  margin-block: 2rem;
 }
