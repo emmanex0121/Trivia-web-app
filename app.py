@@ -4,7 +4,8 @@ from flask import Flask, render_template, redirect, url_for, jsonify, request
 from models.data import *
 
 app = Flask(__name__)
-app.secret_key = secret_key()
+# app.secret_key = secret_key()
+app.config['SECRET_KEY'] = secret_key()
 
 @app.route('/')
 def index():

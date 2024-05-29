@@ -2,31 +2,86 @@
 <html>
   <head>
     <title>Trivia Guru</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/static/assets/images/profile-icon.png" />
     <!-- ========= REMIXICONS ============ -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
-      crossorigin=""
-    />
+      crossorigin="" />
 
     <!-- ========= GOOGLE ICONS ============ -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/static/css/styles.css" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script src="/static/scripts/start.js" type="text/javascript"></script> -->
   </head>
   <body>
-    <div class="container_biggest">
+    <header class="container_footer">
+      <div class="icon_header">
+        <h1>TG</h1>
+      </div>
+    </header>
+    <div class="welcome-heading">
       <h1>Welcome to Trivia Guru</h1>
-      <button class="button_start-random">Play Now</button>
-      <a href="/static/html/mode.html" class="button_trivia-mode"
-        >Select Mode</a
-      >
     </div>
+    <div class="container_content">
+      <div class="container_left">
+        <div class="hindu_image">
+          <img
+            src="/static/assets/images/hindu-back-png-slim.png"
+            alt="hindu-large-text" />
+        </div>
+        <div class="container_button_start">
+          <button class="button_start-random">quick play</button>
+        </div>
+      </div>
+
+      <div class="container_center">
+        <div class="guru_home">
+          <video autoplay loop muted class="guru_home-video">
+            <source
+              src="/static/assets/animations/defaultguru.webm"
+              type="video/webm" />
+            browser does not support
+          </video>
+          <div class="video_overlay"></div>
+        </div>
+      </div>
+
+      <div class="container_right">
+        <div class="text_top">
+          <div class="text_top-hindu">
+            <h3>ज्ञान</h3>
+          </div>
+          <div class="text_top-english">
+            <h3>knowledge is power</h3>
+          </div>
+        </div>
+        <div class="button_trivia">
+          <a href="/static/html/mode.html" class="button_trivia-mode"
+            >Select Mode</a
+          >
+        </div>
+        <div class="text_bottom">
+          <h1 id="trivia-text">Trivia</h1>
+          <h1 id="guru-text">Guru</h1>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container_footer">
+      <div class="container_foooter-links">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Contact">Contact Me</a>
+      </div>
+    </footer>
 
     <script src="/static/scripts/start.js" type="text/javascript"></script>
   </body>

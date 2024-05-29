@@ -1,6 +1,12 @@
 /* =============== GOOGLE FONTS ============= */
-
+/* Bai Jamjuree */
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap");
+
+/* =============== CDN FONTS ============= */
+/* Samarkan */
+@import url("https://fonts.cdnfonts.com/css/samarkan");
+/* Calibri light */
+@import url("https://fonts.cdnfonts.com/css/calibri-light");
 
 /* =============== CSS VARIABLES ============= */
 :root {
@@ -15,10 +21,16 @@
   --text-color-light: hsl(0, 0%, 64%);
   --body-color: hsl(0, 0%, 87%);
   --container-color: hsl(0, 0%, 83%);
+  --yellow-color: #e4bb60;
+  --cream-color: #f2db9f;
+  --purple-color: #6c2faa;
+  --purple-color-light: #bf9ff2;
 
   /* ============ Font and Typography ============ */
   /* .5rem = 8px / 1rem = 16px ... */
   --body-font: "Bai Jamjuree", sans-serif;
+  --hindu-font: "Samarkan", sans-serif;
+  --body-logo-font: "Calibri Light", sans-serif;
   --biggest-font-size: 2.5rem;
   --h1-font-size: 1.75rem;
   --h2-font-size: 1.25rem;
@@ -66,55 +78,222 @@ body {
 
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  /* background-color: var(--body-color); */
   background-color: var(--body-color);
   color: var(--text-color);
 }
 
-.container_biggest {
-  width: 100%;
-  /* height: 100vh; */
+header {
+  position: absolute;
+  top: 0;
+  color: var(--white-color);
+}
+.icon_header {
+  border: 1px solid var(--purple-color);
+  width: fit-content;
+  background-color: var(--black-color);
+  padding: 1rem;
+  border-radius: 3rem;
+
+  position: relative;
+  top: 1rem;
+  left: 15rem;
+}
+
+.welcome-heading {
+  text-align: center;
+  /* margin-inline: auto; */
+  color: var(--black-color);
+  margin-block: 2rem;
+}
+
+.container_content {
+  margin-inline: auto;
+
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding-bottom: 2rem;
+  padding-left: 13rem;
+
+  box-shadow: 0.5rem 0.5rem 2rem 1rem var(--purple-color);
+}
+
+.container_left {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.container_button_start {
+  /* width: 10rem; */
+
+  position: absolute;
+  right: 1rem;
+  z-index: 1;
+}
+.button_start-random,
+.button_trivia-mode {
+  font-family: var(--body-font);
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  border: 1px solid var(--black-color);
   background-color: var(--body-color);
+  padding: 3rem 4rem;
+
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+.container_center {
+  /* width: 100%; */
+  /* background-color: var(--cream-color); */
+
+  width: 33%;
+  height: auto;
+  overflow: hidden;
+}
+.guru_home {
+  position: relative;
+}
+.guru_home-video {
+  width: 45rem;
+  height: auto;
+
+  position: relative;
+  left: -7rem;
+}
+/* .video_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cream-color);
+  opacity: 0.6;
+} */
+
+/* Select mode section */
+.container_right {
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  /* row-gap: 2rem; */
+  /* min-height: 787px; */
+  position: relative;
+}
+.text_top {
+  /* flex-grow: 1; */
+  transform: rotate(90deg);
+  position: relative;
+  right: -10rem;
+  top: 5rem;
+  font-family: var(--hindu-font);
+}
+.text_top-hindu {
+  /* font-family: var(--hindu-font); */
+  width: fit-content;
+  background-color: var(--black-color);
+  padding: 0.5rem 1rem;
+  color: var(--white-color);
+}
+.text_top-english {
+  width: fit-content;
+  background-color: var(--purple-color-light);
+  padding: 0.5rem 1rem;
+  color: var(--black-color);
+}
+.button_trivia {
+  /* flex-grow: 1; */
+  position: relative;
+  top: 3rem;
+  right: 3.5rem;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: var(--title-color);
-  /* font-weight: var(--font-bold); */
-}
-button {
-  font-family: var(--body-font);
-}
-
-.button_start-random {
-  background-color: var(--body-color);
-  border: 1px var(--text-color-light) solid;
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
-  cursor: pointer;
-  padding: 0.5rem;
-}
 .button_trivia-mode {
   text-decoration: none;
-  border: 1px var(--text-color-light) solid;
-  font-size: var(--h2-font-size);
-  color: var(--first-color);
-  padding: 0.5rem;
+  color: var(--black-color);
 }
 
-/* ======= div container to collect data from flask app ====== */
-.display_none {
-  display: none;
+.text_bottom {
+  font-family: var(--body-logo-font);
+  /* font-size: var(--h1-font-size); */
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  bottom: -2rem;
 }
 
-.green-box {
-  background-color: green;
+#trivia-text {
+  line-height: 0;
+  padding-left: 2.5rem;
 }
-.red-box {
-  background-color: red;
+
+/* FOOTER SECTION */
+.container_footer {
+  margin-inline: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
+
+.container_foooter-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  padding: 1rem;
+}
+.container_foooter-links a {
+  color: var(--black-color-light);
+}
+
+.button_start-random:hover,
+.button_trivia-mode:hover {
+  background-color: var(--purple-color-light);
+  border: 3px solid var(--yellow-color);
+  border-radius: 1rem;
+}
+.container_foooter-links a:hover {
+  color: var(--yellow-color);
+}
+
+/* Medium PC SCreen */
+/* @media screen and (max-width: 1740px) {
+  .hindu_image {
+    width: 25rem;
+    height: auto;
+  }
+
+  body {
+    background-color: #ffffff;
+  }
+
+  .container_content {
+    padding-left: 12rem;
+    box-shadow: none;
+  }
+} */
+
+/* @media screen and (min-width: 1650px) {
+  .container_content {
+    padding-left: 10rem;
+  }
+} */
+
+/* @media screen and (min-width: 1500px) {
+  .container_content {
+    padding-left: 6rem;
+  }
+} */

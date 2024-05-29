@@ -54,11 +54,11 @@ async def get_questions_from_url(url_api):
             with open(json_file, 'w') as file:
                 json.dump(new_data, file)
             
-            try:
-                with open(json_file, 'r') as file:
-                    json_data = json.load(file)
-            except FileNotFoundError as e:
-                print('file not found', e)
+            # try:
+            #     with open(json_file, 'r') as file:
+            #         json_data = json.load(file)
+            # except FileNotFoundError as e:
+            #     print('file not found', e)
 
 
 def get_question_at_index(index):

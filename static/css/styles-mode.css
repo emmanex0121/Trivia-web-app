@@ -1,0 +1,101 @@
+/* =============== GOOGLE FONTS ============= */
+/* Bai Jamjuree */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap");
+
+/* =============== CDN FONTS ============= */
+/* Samarkan */
+@import url("https://fonts.cdnfonts.com/css/samarkan");
+/* Calibri light */
+@import url("https://fonts.cdnfonts.com/css/calibri-light");
+
+/* =============== CSS VARIABLES ============= */
+:root {
+  /* ============= Colors ============= */
+  /* Color mode HSL(hue, saturation, lightness) */
+  --first-color: hsl(14, 98%, 50%);
+  --black-color: hsl(0, 0%, 0%);
+  --black-color-light: hsl(0, 0%, 40%);
+  --white-color: hsl(0, 0%, 95%);
+  --title-color: hsl(0, 0%, 0%);
+  --text-color: hsl(0, 0%, 35%);
+  --text-color-light: hsl(0, 0%, 64%);
+  --body-color: hsl(0, 0%, 87%);
+  --container-color: hsl(0, 0%, 83%);
+  --yellow-color: #e4bb60;
+  --cream-color: #f2db9f;
+  --purple-color: #6c2faa;
+  --purple-color-light: #bf9ff2;
+
+  /* ============ Font and Typography ============ */
+  /* .5rem = 8px / 1rem = 16px ... */
+  --body-font: "Bai Jamjuree", sans-serif;
+  --hindu-font: "Samarkan", sans-serif;
+  --body-logo-font: "Calibri Light", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*=========== Font Weight =================*/
+  --font-very-light: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+/*=================== Responsive Typography ==================*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/* ============= BASE ================= */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  /* background-color: var(--body-color); */
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  color: var(--white-color);
+}
+.icon_header {
+  border: 1px solid var(--purple-color);
+  width: fit-content;
+  background-color: var(--black-color);
+  padding: 1rem;
+  border-radius: 3rem;
+
+  position: relative;
+  top: 1rem;
+  left: 15rem;
+}
