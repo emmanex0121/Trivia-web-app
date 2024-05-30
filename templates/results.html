@@ -9,27 +9,47 @@
     <script src="/static/scripts/start.js" type="text/javascript"></script>
   </head>
   <body>
-    <div>
-      <div class="display_none" id="answers_data">
-        {{ correct_answers_list | safe }}
+    <header class="container_header">
+      <div class="icon_header">
+        <h1>TG</h1>
+      </div>
+    </header>
+    <div class="mode_heading">
+      <h1>TRIVIA GURU</h1>
+    </div>
+    <div class="display_none" id="answers_data">
+      {{ correct_answers_list | safe }}
+    </div>
+
+    <div class="container_results-section">
+      <div class="result_text">
+        <h2>Results</h2>
       </div>
       {% for question in questions %}
-      <div id="{{ question.question_id }}">
-        <p>{{ question.question | safe }}</p>
+      <div class="section_questions" id="{{ question.question_id }}">
+        <h2><span>{{ question.question_id + 1 }}.</span> {{ question.question | safe }}</h2>
         <ul>
-          {% for answer in question.answers %}
-          <li
-            id="answer_{{ loop.index }}"
-            class="question_{{ question.question_id }}"
-          >
-            {{ answer | safe }}
-          </li>
-          <br />
-          {% endfor %}
+          <div class="li-container_answers">
+            {% for answer in question.answers %}
+            <li
+              id="answer_{{ loop.index }}"
+              class="li_answer question_{{ question.question_id }}">
+              {{ answer | safe }}
+            </li>
+            {% endfor %}
+          </div>
         </ul>
       </div>
       {% endfor %}
       <button class="button_home">HOME</button>
     </div>
+
+    <footer class="container_footer">
+      <div class="container_foooter-links">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Contact">Contact Me</a>
+      </div>
+    </footer>
   </body>
 </html>

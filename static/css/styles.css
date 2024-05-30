@@ -81,6 +81,18 @@ body {
   /* background-color: var(--body-color); */
   background-color: var(--body-color);
   color: var(--text-color);
+
+  position: relative;
+}
+
+h2,
+h3,
+h4 {
+  color: var(--black-color);
+  /* font-weight: var(--font-bold); */
+}
+button {
+  font-family: var(--body-font);
 }
 
 header {
@@ -96,7 +108,7 @@ header {
   border-radius: 3rem;
 
   position: relative;
-  top: 1rem;
+  top: 0;
   left: 15rem;
 }
 
@@ -138,7 +150,10 @@ header {
 }
 .button_start-random,
 .button_trivia-mode,
-.button_trivia-start {
+.button_trivia-start,
+.button_results-view,
+.button_restart,
+.button_home {
   font-family: var(--body-font);
   font-size: var(--h2-font-size);
   font-weight: var(--font-medium);
@@ -256,7 +271,10 @@ header {
 
 .button_start-random:hover,
 .button_trivia-mode:hover,
-.button_trivia-start:hover {
+.button_trivia-start:hover,
+.button_results-view:hover,
+.button_restart:hover,
+.button_home:hover {
   background-color: var(--purple-color-light);
   border: 3px solid var(--yellow-color);
   border-radius: 1rem;
@@ -267,9 +285,9 @@ header {
 
 /* ======================== MODE PAGE =================== */
 .container_content-mode,
-.container_content-start {
+.container_content-start,
+.container_content-score {
   margin-inline: auto;
-  /* width: fit-content; */
   height: 80vh;
   background-color: #ffffff;
 }
@@ -383,7 +401,6 @@ header {
   width: max-content;
   height: max-content;
   /* border-radius: 50%; */
-  border: ;
 
   display: flex;
   align-items: center;
@@ -494,7 +511,147 @@ header {
 }
 
 .selected_answer-radio {
-    
+  transform: scale(1.2);
+}
+
+/* ==================== SCORE PAGE ================== */
+.container_content-score {
+  max-width: 90rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  position: relative;
+}
+
+.container_score-comment {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: var(--yellow-color);
+  width: 20rem;
+  height: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: var(--h2-font-size);
+}
+.container_score {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+}
+
+#container_guru-result-1,
+#container_guru-result-2,
+#container_guru-result-3 {
+  display: none;
+}
+.dummy-guru-video-section {
+  width: 10rem;
+  height: 30rem;
+  background-color: var(--purple-color);
+}
+
+.comment_subtitle-score_buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+
+  font-size: var(--h2-font-size);
+  color: var(--black-color);
+}
+.score_buttons {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.button_results-view,
+.button_restart,
+.button_home {
+  min-width: 20rem;
+}
+.button_restart {
+  padding: 4rem 8rem;
+}
+
+/* ===============  RESULTS PAGE  ================= */
+.container_results-section {
+  width: 90rem;
+  margin-inline: auto;
+  background-color: #ffffff;
+}
+.result_text {
+  margin-bottom: 2rem;
+  font-size: var(--h1-font-size);
+}
+.section_questions {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 2rem;
+}
+
+.section_questions h2,
+.result_text {
+  padding-left: 2rem;
+}
+.section_questions span {
+  font-size: var(--h2-font-size);
+}
+
+.li-container_answers {
+  width: max-content;
+  min-height: 5rem;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+
+  gap: 2rem;
+}
+.li_answer {
+  list-style: none;
+  width: 100%;
+  border: 1px solid var(--black-color);
+  text-align: center;
+  color: var(--black-color);
+
+  padding: 2rem;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  transition: 0.1s ease;
+}
+.li_answer:hover {
+  border: 3px solid var(--purple-color);
+  border-radius: 1rem;
+}
+
+/* ======= div container to collect data from flask app ====== */
+.display_none {
+  display: none;
+}
+
+.green-box {
+  background-color: green;
+}
+.red-box {
+  background-color: red;
+}
+.green-box,
+.red-box {
+  color: #ffffff;
 }
 
 /* .container_button-start {

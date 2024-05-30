@@ -11,27 +11,76 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
-      crossorigin=""
-    />
+      crossorigin="" />
 
     <!-- ========= GOOGLE ICONS ============ -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
-    <div>score: {{ score | safe }}/10</div>
-    <h2>{{ comment | safe }}</h2>
-    <h4>{{ comment_subtitle | safe }}</h4>
+    <header class="container_header">
+      <div class="icon_header">
+        <h1>TG</h1>
+        <!-- <a href="{{ url_for('index') }}"></a> -->
+      </div>
+    </header>
+    <div class="mode_heading">
+      <h1>TRIVIA GURU</h1>
+    </div>
 
-    <div><button class="button_restart">{{ restart | safe }}</button></div>
+    <div class="container_content-score">
+      <div class="container_score-comment">
+        <h2 class="score_comment_text">{{ comment | safe }}</h2>
+        <div class="container_score">{{ score | safe }}/10</div>
+      </div>
 
-    <div><button class="button_results-view">View Results</button></div>
+      <div class="dummy-guru-video-section"></div>
 
-    <div><button class="button_home">HOME</button></div>
+      <div class="container_guru-result" id="container_guru-result-1">
+        <!-- Guru Video here -->
+        <video autoplay loop muted class="guru_score-video">
+          <source src="" type="video/webm" />
+          browser does not support
+        </video>
+      </div>
+      <div class="container_guru-result" id="container_guru-result-2">
+        <!-- Guru Video here -->
+        <video autoplay loop muted class="guru_score-video">
+          <source src="" type="video/webm" />
+          browser does not support
+        </video>
+      </div>
+      <div class="container_guru-result" id="container_guru-result-1">
+        <!-- Guru Video here -->
+        <video autoplay loop muted class="guru_score-video">
+          <source src="" type="video/webm" />
+          browser does not support
+        </video>
+      </div>
 
+      <div class="comment_subtitle-score_buttons">
+        <div class="container_comment-subtitle">
+          <h2>{{ comment_subtitle | safe }}</h2>
+        </div>
+        <div class="score_buttons">
+          <div><button class="button_results-view">View Results</button></div>
+          <div>
+            <button class="button_restart">{{ restart | safe }}</button>
+          </div>
+          <div><button class="button_home">Home</button></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container_footer">
+      <div class="container_foooter-links">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Contact">Contact Me</a>
+      </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/static/scripts/start.js" type="text/javascript"></script>
   </body>
