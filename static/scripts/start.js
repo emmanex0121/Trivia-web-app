@@ -126,6 +126,15 @@ $(document).ready(function () {
     $(".button_submit").prop("disabled", false);
   }
 
+  // $(".container_answer").on("click", function () {
+  //   // for (let i = 0; i < 4; i++) {
+  //   //   $('input[id="selected_answer-' + i + '"]')
+  //   //     .prop("checked", true)
+  //   //     .trigger("click");
+  //   // }
+  //   $(this).find('input[type="radio"]').prop("checked", true).trigger("click");
+  // });
+
   // Event handler for radio button click
   $('input[name="selected_answer"]').on("click", function () {
     const selectedAnswer = $('input[name="selected_answer"]:checked').val();

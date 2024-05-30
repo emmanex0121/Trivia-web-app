@@ -4,40 +4,68 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
-      crossorigin=""
-    />
+      crossorigin="" />
 
     <!-- ========= GOOGLE ICONS ============ -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/static/css/styles.css" />
     <title>Trivia: Play Now</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script src="/static/scripts/start.js" type="text/javascript"></script> -->
   </head>
   <body>
-    <h1>TRIVIA GURU</h1>
-    <form action="/score" method="post" class="form_trivia">
-      <div class="question">
-        <p>{{ question.text | safe }}</p>
-        {% for answer in answers_list %}
-        <input
-          type="radio"
-          class="selected_answer-radio"
-          name="selected_answer"
-          value="{{ answer.text }}"
-        />
-        <label for="selected_answer">{{ answer.text | safe }}</label>
-        <br />
-        {% endfor %}
+    <header class="container_header">
+      <div class="icon_header">
+        <h1>TG</h1>
       </div>
-      <button class="button_prev" type="button">Previous</button>
-      <button class="button_next" type="button">next</button>
-      <button class="button_submit" type="submit">submit</button>
-    </form>
-    <!-- Add content for start page here -->
+    </header>
+    <div class="mode_heading">
+      <h1>TRIVIA GURU</h1>
+    </div>
+    <div class="container_content-start">
+      <form action="/score" method="post" class="form_trivia">
+        <div class="start_form-content">
+          <div class="start_buttons">
+            <button class="button_prev" type="button">Previous</button>
+            <button class="button_next" type="button">next</button>
+            <button class="button_submit" type="submit">submit</button>
+          </div>
+          <div class="container_trivia-guru">
+            <img src="/static/assets/images/profile-icon2.jpeg" alt="" />
+          </div>
+          <div class="selected_question">
+            <h2>{{ question.text | safe }}</h2>
+          </div>
+          <div class="container_answers">
+            {% for answer in answers_list %}
+            <div class="container_answer">
+              <input
+                type="radio"
+                class="selected_answer-radio"
+                name="selected_answer"
+                id="selected_answer-{{ loop.index0 }}"
+                value="{{ answer.text }}" />
+              <label
+                for="selected_answer-{{ loop.index0 }}"
+                class="selected_answer-label"
+                >{{ answer.text | safe }}</label
+              >
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer class="container_footer">
+      <div class="container_foooter-links">
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Contact">Contact Me</a>
+      </div>
+    </footer>
     <script src="/static/scripts/start.js" type="text/javascript"></script>
   </body>
 </html>
