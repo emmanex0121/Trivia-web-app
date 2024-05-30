@@ -19,6 +19,7 @@
     <header class="container_header">
       <div class="icon_header">
         <h1>TG</h1>
+        <!-- <a href="{{ url_for('index') }}"></a> -->
       </div>
     </header>
     <div class="mode_heading">
@@ -28,12 +29,21 @@
       <form action="/score" method="post" class="form_trivia">
         <div class="start_form-content">
           <div class="start_buttons">
-            <button class="button_prev" type="button">Previous</button>
-            <button class="button_next" type="button">next</button>
-            <button class="button_submit" type="submit">submit</button>
+            <div class="container_button-prev">
+              <button class="button_prev" type="button">Previous</button>
+            </div>
+            <div class="container_button-next">
+              <button class="button_next" type="button">next</button>
+            </div>
+            <div class="container_button-submit">
+              <button class="button_submit" type="submit">submit</button>
+            </div>
           </div>
           <div class="container_trivia-guru">
-            <img src="/static/assets/images/profile-icon2.jpeg" alt="" />
+            <div class="container_circle"></div>
+            <div class="container_guru-head">
+              <img src="/static/assets/images/tghead 1.png" alt="" />
+            </div>
           </div>
           <div class="selected_question">
             <h2>{{ question.text | safe }}</h2>
