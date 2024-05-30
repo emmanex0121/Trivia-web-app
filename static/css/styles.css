@@ -589,6 +589,10 @@ header {
   width: 90rem;
   margin-inline: auto;
   background-color: #ffffff;
+  padding-bottom: 4rem;
+}
+.container_results-section .button_home {
+  margin-left: 4rem;
 }
 .result_text {
   margin-bottom: 2rem;
