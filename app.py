@@ -92,13 +92,19 @@ def submit_play():
     
     score = get_scores(answers_list)
 
-    if score < 10:
+    if score < 5:
         comment = "Not Great!"
-        comment_subtitle = "You can do better! You Whackamole!"
+        # comment_subtitle = "You can do better! You Whackamole!"
+        comment_subtitle = "You brought the guru intense shame. He has perished"
         restart = "Try Again Gasbag"
+    elif score < 9:
+        comment = "Great!"
+        comment_subtitle = "This guru is only mildly impressed"
+        restart = "Try Again"
     else:
         comment = "Awesome!!!"
-        comment_subtitle = "Now that &aposs how you do it!!"
+        # comment_subtitle = "Now that &aposs how you do it!!"
+        comment_subtitle = "The guru has reached enlightenment!"
         restart = "Play Again" 
 
     return render_template('score.html', score=score, comment=comment, comment_subtitle=comment_subtitle, restart=restart)

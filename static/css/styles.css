@@ -74,23 +74,17 @@ html {
 
 body {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
 
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   /* background-color: var(--body-color); */
   background-color: var(--body-color);
-  color: var(--text-color);
+  color: var(--black-color);
 
   position: relative;
 }
 
-h2,
-h3,
-h4 {
-  color: var(--black-color);
-  /* font-weight: var(--font-bold); */
-}
 button {
   font-family: var(--body-font);
 }
@@ -101,15 +95,23 @@ header {
   color: var(--white-color);
 }
 .icon_header {
-  border: 1px solid var(--purple-color);
   width: fit-content;
   background-color: var(--black-color);
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 3rem;
 
   position: relative;
   top: 0;
   left: 15rem;
+}
+.icon_header h1 {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.icon_header a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .welcome-heading,
@@ -125,11 +127,14 @@ header {
   margin-inline: auto;
 
   width: fit-content;
+  height: 70vh;
   display: flex;
+  gap: 2rem;
   align-items: center;
   background-color: #ffffff;
-  padding-bottom: 2rem;
-  padding-left: 13rem;
+  /* padding-bottom: 2rem; */
+  padding-right: 5rem;
+  padding-left: 6rem;
 
   box-shadow: 0.5rem 0.5rem 2rem 1rem var(--purple-color);
 }
@@ -140,12 +145,17 @@ header {
 
   position: relative;
 }
+.hindu_image {
+  width: 300px;
+  height: auto;
+}
 
 .container_button_start {
   /* width: 10rem; */
 
   position: absolute;
-  right: 1rem;
+  /* right: 3rem; */
+  left: 5.2rem;
   z-index: 1;
 }
 .button_start-random,
@@ -159,7 +169,7 @@ header {
   font-weight: var(--font-medium);
   border: 1px solid var(--black-color);
   background-color: var(--body-color);
-  padding: 3rem 4rem;
+  padding: 2rem 3rem;
 
   cursor: pointer;
 
@@ -170,28 +180,32 @@ header {
   /* width: 100%; */
   /* background-color: var(--cream-color); */
 
-  width: 33%;
+  /* width: 33%; */
+  max-height: 70vh;
   height: auto;
+
   overflow: hidden;
 }
 .guru_home {
   position: relative;
 }
 .guru_home-video {
-  width: 45rem;
+  width: 25rem;
   height: auto;
 
   position: relative;
-  left: -7rem;
+  bottom: 2rem;
+  /* right: 1.15rem; */
 }
 
 /* Select mode section */
 .container_right {
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-left: 1.8rem;
   /* row-gap: 2rem; */
   /* min-height: 787px; */
   position: relative;
@@ -200,7 +214,7 @@ header {
   /* flex-grow: 1; */
   transform: rotate(90deg);
   position: relative;
-  right: -10rem;
+  right: -5rem;
   top: 5rem;
   font-family: var(--hindu-font);
 }
@@ -211,12 +225,22 @@ header {
   padding: 0.5rem 1rem;
   color: var(--white-color);
 }
+.text_top-hindu:hover {
+  background-color: var(--purple-color-light);
+  color: var(--black-color);
+}
+
 .text_top-english {
   width: fit-content;
   background-color: var(--purple-color-light);
   padding: 0.5rem 1rem;
   color: var(--black-color);
 }
+.text_top-english:hover {
+  background-color: var(--black-color);
+  color: #ffffff;
+}
+
 .button_trivia {
   /* flex-grow: 1; */
   position: relative;
@@ -231,22 +255,26 @@ header {
 }
 
 .text_bottom {
-  font-family: var(--body-logo-font);
-  /* font-size: var(--h1-font-size); */
+  /* font-family: var(--body-logo-font);
+  font-size: var(--h1-font-size);
   font-size: var(--biggest-font-size);
   font-weight: var(--font-bold);
   color: var(--black-color);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
 
   position: relative;
-  bottom: -2rem;
+  bottom: 1rem;
+}
+.text_bottom img {
+  width: 20rem;
+  height: auto;
 }
 
-#trivia-text {
+/* #trivia-text {
   line-height: 0;
   padding-left: 2.5rem;
-}
+} */
 
 /* FOOTER SECTION */
 .container_footer {
@@ -263,10 +291,12 @@ header {
   justify-content: center;
   gap: 2rem;
 
-  padding: 1rem;
+  padding: 2rem;
 }
 .container_foooter-links a {
   color: var(--black-color-light);
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-bold);
 }
 
 .button_start-random:hover,
@@ -554,12 +584,12 @@ header {
 } */
 
 .container_guru-result {
-    /* display: unset; */
-    text-align: center;
+  /* display: unset; */
+  text-align: center;
 }
 .guru_score-video {
-    width: 15rem;
-    height: 100%;
+  width: 20rem;
+  height: 100%;
 }
 
 .comment_subtitle-score_buttons {

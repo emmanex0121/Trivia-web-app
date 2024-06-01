@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trivia Guru</title>
     <link
       rel="icon"
       type="image/x-icon"
-      href="/static/assets/images/profile-icon.png" />
+      href="/static/assets/images/triviaguru1-CROP.png" />
     <!-- ========= REMIXICONS ============ -->
     <link
       rel="stylesheet"
@@ -24,7 +26,7 @@
   <body>
     <header class="container_header">
       <div class="icon_header">
-        <h1>TG</h1>
+        <a href="/"><h1>TG</h1></a>
       </div>
     </header>
     <div class="welcome-heading">
@@ -32,10 +34,11 @@
     </div>
     <div class="container_content">
       <div class="container_left">
-        <div class="hindu_image">
+        <div class="container_hindu-image">
           <img
             src="/static/assets/images/hindu-back-png-slim.png"
-            alt="hindu-large-text" />
+            alt="hindu-large-text"
+            class="hindu_image" />
         </div>
         <div class="container_button_start">
           <button class="button_start-random">quick play</button>
@@ -46,7 +49,7 @@
         <div class="guru_home">
           <video autoplay loop muted class="guru_home-video">
             <source
-              src="/static/assets/animations/defaultguru.webm"
+              src="/static/assets/animations/guru-default.webm"
               type="video/webm" />
             browser does not support
           </video>
@@ -68,8 +71,9 @@
           >
         </div>
         <div class="text_bottom">
-          <h1 id="trivia-text">Trivia</h1>
-          <h1 id="guru-text">Guru</h1>
+          <!-- <h1 id="trivia-text">Trivia</h1>
+          <h1 id="guru-text">Guru</h1> -->
+          <img src="/static/assets/images/Group3-crop.png" alt="">
         </div>
       </div>
     </div>
