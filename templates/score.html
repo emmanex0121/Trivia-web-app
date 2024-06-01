@@ -36,29 +36,37 @@
         <div class="container_score">{{ score | safe }}/10</div>
       </div>
 
-      <div class="dummy-guru-video-section"></div>
+      <!-- <div class="dummy-guru-video-section"></div> -->
 
+      {% if score < 6 %}
       <div class="container_guru-result" id="container_guru-result-1">
         <!-- Guru Video here -->
         <video autoplay loop muted class="guru_score-video">
-          <source src="" type="video/webm" />
+          <source
+            src="/static/assets/animations/guru-dead.webm"
+            type="video/webm" />
           browser does not support
         </video>
       </div>
+      {% elif score < 10 %}
       <div class="container_guru-result" id="container_guru-result-2">
-        <!-- Guru Video here -->
         <video autoplay loop muted class="guru_score-video">
-          <source src="" type="video/webm" />
+          <source
+            src="/static/assets/animations/guru-passive.webm"
+            type="video/webm" />
           browser does not support
         </video>
       </div>
+      {% else %}
       <div class="container_guru-result" id="container_guru-result-1">
-        <!-- Guru Video here -->
         <video autoplay loop muted class="guru_score-video">
-          <source src="" type="video/webm" />
+          <source
+            src="/static/assets/animations/guru-enlightened.webm"
+            type="video/webm" />
           browser does not support
         </video>
       </div>
+      {% endif %}
 
       <div class="comment_subtitle-score_buttons">
         <div class="container_comment-subtitle">
@@ -69,14 +77,16 @@
           <div>
             <button class="button_restart">{{ restart | safe }}</button>
           </div>
-          <div><button class="button_home">Home</button></div>
+          <div>
+            <button class="button_home"><a href="/">Home</a></button>
+          </div>
         </div>
       </div>
     </div>
 
     <footer class="container_footer">
       <div class="container_foooter-links">
-        <a href="#Home">Home</a>
+        <a href="/">Home</a>
         <a href="#About">About</a>
         <a href="#Contact">Contact Me</a>
       </div>

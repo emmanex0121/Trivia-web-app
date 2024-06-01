@@ -151,7 +151,7 @@ $(document).ready(function () {
   });
 
   // Trivia Submit button
-  // Collects all th input, stores them in ab object
+  // Collects all the input, stores them in an object
   // stringify them and send along with the form to the app server
   $(".button_submit").on("click", function () {
     console.log("HELOOOOOOOOOOOOO");
@@ -176,9 +176,9 @@ $(document).ready(function () {
       .appendTo('form[action="/score"]');
   });
 
-  $(".button_home").on("click", function () {
-    window.location.href = "/";
-  });
+  // $(".button_home").on("click", function () {
+  //   window.location.href = "/";
+  // });
   $(".button_results-view").on("click", function () {
     window.location.href = "/results";
   });

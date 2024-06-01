@@ -252,7 +252,7 @@ header {
 .container_footer {
   margin-inline: auto;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
@@ -547,15 +547,19 @@ header {
   font-weight: var(--font-bold);
 }
 
-#container_guru-result-1,
+/* #container_guru-result-1,
 #container_guru-result-2,
 #container_guru-result-3 {
   display: none;
+} */
+
+.container_guru-result {
+    /* display: unset; */
+    text-align: center;
 }
-.dummy-guru-video-section {
-  width: 10rem;
-  height: 30rem;
-  background-color: var(--purple-color);
+.guru_score-video {
+    width: 15rem;
+    height: 100%;
 }
 
 .comment_subtitle-score_buttons {
@@ -580,6 +584,10 @@ header {
 .button_home {
   min-width: 20rem;
 }
+.button_home a {
+  text-decoration: none;
+  color: var(--black-color);
+}
 .button_restart {
   padding: 4rem 8rem;
 }
@@ -587,6 +595,7 @@ header {
 /* ===============  RESULTS PAGE  ================= */
 .container_results-section {
   width: 90rem;
+  height: fit-content;
   margin-inline: auto;
   background-color: #ffffff;
   padding-bottom: 4rem;

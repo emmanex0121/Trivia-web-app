@@ -27,7 +27,10 @@
       </div>
       {% for question in questions %}
       <div class="section_questions" id="{{ question.question_id }}">
-        <h2><span>{{ question.question_id + 1 }}.</span> {{ question.question | safe }}</h2>
+        <h2>
+          <span>{{ question.question_id + 1 }}.</span> {{ question.question |
+          safe }}
+        </h2>
         <ul>
           <div class="li-container_answers">
             {% for answer in question.answers %}
@@ -41,12 +44,12 @@
         </ul>
       </div>
       {% endfor %}
-      <button class="button_home">HOME</button>
+      <button class="button_home"><a href="/">HOME</a></button>
     </div>
 
     <footer class="container_footer">
       <div class="container_foooter-links">
-        <a href="#Home">Home</a>
+        <a href="/">Home</a>
         <a href="#About">About</a>
         <a href="#Contact">Contact Me</a>
       </div>
