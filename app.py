@@ -14,8 +14,6 @@ def index():
 @app.route('/play_now', strict_slashes=False)
 async def play_now():
     # Logic to manipulate GET request data
-    # For demonstration purposes, let's assume the manipulated data is "manipulated_data"
-    # manipulated_data = 'Manually manipulated data'
 
     # For random questions 10
     url = 'https://opentdb.com/api.php?amount=10&type=multiple'
@@ -98,7 +96,7 @@ def submit_play():
         comment_subtitle = "You brought the guru intense shame. He has perished"
         restart = "Try Again Gasbag"
     elif score < 9:
-        comment = "Great!"
+        comment = "Good!"
         comment_subtitle = "This guru is only mildly impressed"
         restart = "Try Again"
     else:

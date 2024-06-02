@@ -102,7 +102,7 @@ header {
 
   position: relative;
   top: 0;
-  left: 15rem;
+  left: 20rem;
 }
 .icon_header h1 {
   width: 100%;
@@ -289,7 +289,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
 
   padding: 2rem;
 }
@@ -506,7 +506,7 @@ header {
 
 .selected_question {
   color: var(--black-color);
-  padding-inline: 2rem;
+  padding-inline: 3rem;
   text-align: center;
 }
 .container_answers {
@@ -532,6 +532,8 @@ header {
 .selected_answer-label {
   padding-left: 1rem;
   color: var(--black-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
 }
 
 .selected_answer-label,
@@ -547,11 +549,13 @@ header {
 /* ==================== SCORE PAGE ================== */
 .container_content-score {
   max-width: 90rem;
+  height: 80vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  padding-bottom: 2rem;
 
   position: relative;
 }
@@ -586,6 +590,8 @@ header {
 .container_guru-result {
   /* display: unset; */
   text-align: center;
+  overflow: hidden;
+  /* padding-bottom: 3rem; */
 }
 .guru_score-video {
   width: 20rem;
@@ -597,10 +603,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 
   font-size: var(--h2-font-size);
   color: var(--black-color);
+
+  padding-bottom: 3rem;
 }
 .score_buttons {
   width: 100%;
@@ -623,6 +631,11 @@ header {
 }
 
 /* ===============  RESULTS PAGE  ================= */
+/* == div container to collect data from flask app == */
+.display_none {
+  display: none;
+}
+
 .container_results-section {
   width: 90rem;
   height: fit-content;
@@ -681,11 +694,6 @@ header {
   border-radius: 1rem;
 }
 
-/* ======= div container to collect data from flask app ====== */
-.display_none {
-  display: none;
-}
-
 .green-box {
   background-color: green;
 }
@@ -695,6 +703,10 @@ header {
 .green-box,
 .red-box {
   color: #ffffff;
+}
+
+.container_footer-color {
+    background-color: var(--body-color);
 }
 
 /* .container_button-start {

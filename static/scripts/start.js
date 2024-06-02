@@ -7,8 +7,6 @@ $(document).ready(function () {
   let route = parseInt(sessionStorage.getItem("route_id"));
   console.log(route);
 
-  // console.log("BUHAHAHAHAHHAHAA");
-
   if (route === 0) {
     $(".button_prev").hide();
     // console.log(route)
@@ -25,8 +23,6 @@ $(document).ready(function () {
     $(".button_submit").show();
     // console.log(route)
   }
-
-  // console.log("BUHAHAHAHAHHAHAA");
 
   // Increment route ID and navigate to next route
   $(".button_next").click(function () {
