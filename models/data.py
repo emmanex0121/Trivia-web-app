@@ -24,7 +24,7 @@ def secret_key():
 #     random.shuffle(new_list)
 #     return new_list
 
-async def get_questions_from_url(url_api):
+async def get_questions_from_url(url_api, uid):
     """
         collects the data from the API, strips it,
         takes only the needed questions and answers information,
@@ -50,7 +50,7 @@ async def get_questions_from_url(url_api):
                                 'incorrect_answers': index['incorrect_answers']})
 
             # json_file = f'json/request_dump_{unique_ID}.json'
-            json_file = f'json/request_dump_{secret_key()}.json'
+            json_file = f'json/request_dump_{uid}.json'
 
             with open(json_file, 'w') as file:
                 json.dump(new_data, file)

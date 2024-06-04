@@ -10,6 +10,7 @@ app = Flask(__name__)
 # app.secret_key = secret_key()
 app.config['SECRET_KEY'] = secret_key()
 # unique_ID = str(uuid4())
+secret_key = secret_key()
 
 @app.route('/')
 def index():
@@ -23,7 +24,7 @@ async def play_now():
     url = 'https://opentdb.com/api.php?amount=10&type=multiple'
 
     # question_list = get_questions(url)
-    await get_questions_from_url(url)
+    await get_questions_from_url(url, secret_key)
 
     return redirect(url_for('play_page', route_id=0))
 
