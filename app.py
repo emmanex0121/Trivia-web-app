@@ -31,7 +31,7 @@ async def play_now():
 @app.route('/play_now/<int:route_id>', strict_slashes=False)
 def play_page(route_id):
 
-    my_list = get_question_at_index(route_id)
+    my_list = get_question_at_index(route_id, secret_key)
     if not my_list:
         return "No questions and answers available", 404
     question = {"id": route_id, "text": my_list[0]}
