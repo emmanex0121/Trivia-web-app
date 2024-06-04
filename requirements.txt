@@ -1,0 +1,14 @@
+aiohttp
+Flask
+gunicorn
+requests
+aiohttp
+SQLAlchemy
+Flask-SQLAlchemy
+Jinja2
+Werkzeug
+# Additional packages
+Flask-WTF
+Flask-Login
+Flask-Migrate
+python-dotenv
