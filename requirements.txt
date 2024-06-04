@@ -4,6 +4,7 @@ Flask[async]
 gunicorn
 requests
 aiohttp
+asyncio
 SQLAlchemy
 Flask-SQLAlchemy
 Jinja2
