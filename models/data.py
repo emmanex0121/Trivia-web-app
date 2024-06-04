@@ -64,14 +64,14 @@ async def get_questions_from_url(url_api, uid):
             #     print('file not found', e)
 
 
-def get_question_at_index(index):
+def get_question_at_index(index, uid):
     """
         Returns a list of question and the answers at index provided
         index 0 is the correct answer
         index 1 - 4 are the wrong answers
     """
 
-    json_file = f'json/request_dump_{secret_key()}.json'
+    json_file = f'json/request_dump_{uid}.json'
     # json_file = f'json/request_dump_{unique_ID}.json'
     questions_answers_list = None #initializing questions and asnwers list
 
