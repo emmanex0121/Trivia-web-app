@@ -35,8 +35,8 @@ async def get_questions_from_url(url_api):
         async with session.get(url_api) as response:
             data = await response.json()
             # print(data)
-            data = data['results']
-            # data = data.get('results')
+            # data = data['results']
+            data = data.get('results')
             # print(data)
             
     # response = await requests.get(url_api)
