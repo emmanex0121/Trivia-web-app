@@ -1,5 +1,5 @@
 aiohttp
-Flask
+# Flask
 Flask[async]
 gunicorn
 requests
