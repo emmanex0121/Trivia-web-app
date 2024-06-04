@@ -61,15 +61,15 @@ async def submit_mode():
         redirect_url = url_for('play_now')
     elif difficulty == 'any':
         url = f'https://opentdb.com/api.php?amount=10&category={category}&type=multiple'
-        await get_questions_from_url(url)
+        await get_questions_from_url(url, secret_key)
         redirect_url = url_for('play_page', route_id=0)
     elif category == 'any':
         url = f'https://opentdb.com/api.php?amount=10&difficulty={difficulty}&type=multiple'
-        await get_questions_from_url(url)
+        await get_questions_from_url(url, secret_key)
         redirect_url = url_for('play_page', route_id=0)
     else:
         url = f'https://opentdb.com/api.php?amount=10&category={category}&difficulty={difficulty}&type=multiple'
-        await get_questions_from_url(url)
+        await get_questions_from_url(url, secret_key)
         redirect_url = url_for('play_page', route_id=0)
     
     # return redirect(url_for('play_page', route_id=0))
@@ -90,7 +90,7 @@ def submit_play():
     for key, value in answers_list.items():
         print(key, value)
     
-    score = get_scores(answers_list)
+    score = get_scores(answers_list, secret_key)
 
     if score < 5:
         comment = "Not Great!"
@@ -114,16 +114,16 @@ def results():
     questions = []
 
     for item in range(10):
-        question = get_question_at_index(item)[0]
-        correct_answer = get_question_at_index(item)[1]
-        answers = [get_question_at_index(item)[1], get_question_at_index(item)[2], get_question_at_index(item)[3], get_question_at_index(item)[4]]
+        question = get_question_at_index(item, secret_key)[0]
+        correct_answer = get_question_at_index(item, secret_key)[1]
+        answers = [get_question_at_index(item, secret_key)[1], get_question_at_index(item, secret_key)[2], get_question_at_index(item, secret_key)[3], get_question_at_index(item, secret_key)[4]]
         random.shuffle(answers)
         shuffle_answers = answers
         questions.append({'question_id': item, 'question': question, 'correct_answer': correct_answer, 'answers': shuffle_answers})
         # questions_object['item'] = get_question_at_index(item)
     
 
-    correct_answers_list = json.dumps(get_correct_answers())
+    correct_answers_list = json.dumps(get_correct_answers(secret_key))
     # correct_answers_list = get_correct_answers()
 
     print (correct_answers_list)

@@ -96,12 +96,12 @@ def get_question_at_index(index, uid):
 
     return questions_answers_list if questions_answers_list is not None else []
 
-def get_correct_answers():
+def get_correct_answers(uid):
     """
         This function loads the modified json file created to extract
         the rest of the data as needed.
     """
-    json_file = f'json/request_dump_{secret_key()}.json'
+    json_file = f'json/request_dump_{uid}.json'
     with open(json_file, 'r') as file:
         data = json.load(file)
 
@@ -110,9 +110,9 @@ def get_correct_answers():
         my_list.append(item['correct_answer'])
     return my_list
 
-def get_scores(dict):
+def get_scores(dict, uid):
     my_answer_list = []
-    correct_answer_list = get_correct_answers()
+    correct_answer_list = get_correct_answers(uid)
     for key, value in dict.items():
         my_answer_list.append(value)
     
