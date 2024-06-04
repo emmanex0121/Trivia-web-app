@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-import json, random, asyncio
+import json, random
 from flask import Flask, render_template, redirect, url_for, jsonify, request
+# from flask_session import Session
 from models.data import *
+# from uuid import uuid4
+
 
 app = Flask(__name__)
 # app.secret_key = secret_key()
 app.config['SECRET_KEY'] = secret_key()
+# unique_ID = str(uuid4())
 
 @app.route('/')
 def index():
@@ -27,21 +31,18 @@ async def play_now():
 def play_page(route_id):
 
     my_list = get_question_at_index(route_id)
+    if not my_list:
+        return "No questions and answers available", 404
     question = {"id": route_id, "text": my_list[0]}
-    # answers_list = rearrange_list([my_list[1],
-    #                 my_list[2],
-    #                 my_list[3],
-    #                 my_list[4]])
-    # answers_list = [my_list[1],
-    #                 my_list[2],
-    #                 my_list[3],
-    #                 my_list[4]]
+
     answers_list = [
         {"id": 1, "text": my_list[1]},
         {"id": 2, "text": my_list[2]},
         {"id": 3, "text": my_list[3]},
         {"id": 4, "text": my_list[4]}
     ]
+    print(answers_list[0])
+    random.shuffle(answers_list)
     print(answers_list[0])
 
     return render_template('start.html', question=question, answers_list=answers_list)

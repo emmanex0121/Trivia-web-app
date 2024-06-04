@@ -1,7 +1,7 @@
 import random, requests, json, os, asyncio, aiohttp
 from uuid import uuid4
 
-unique_ID = uuid4()
+# unique_ID = str(uuid4())
 
 
 def secret_key():
@@ -18,11 +18,11 @@ def secret_key():
 
     return key
 
-def rearrange_list(input_list):
-    # Use random.shuffle() to shuffle the elements of the list in place
-    new_list = input_list.copy()
-    random.shuffle(new_list)
-    return new_list
+# def rearrange_list(input_list):
+#     # Use random.shuffle() to shuffle the elements of the list in place
+#     new_list = input_list.copy()
+#     random.shuffle(new_list)
+#     return new_list
 
 async def get_questions_from_url(url_api):
     """
@@ -49,7 +49,8 @@ async def get_questions_from_url(url_api):
                                 'correct_answer': index['correct_answer'],
                                 'incorrect_answers': index['incorrect_answers']})
 
-            json_file = f'json/request_dump_{unique_ID}.json'
+            # json_file = f'json/request_dump_{unique_ID}.json'
+            json_file = f'json/request_dump_{secret_key()}.json'
 
             with open(json_file, 'w') as file:
                 json.dump(new_data, file)
@@ -68,8 +69,9 @@ def get_question_at_index(index):
         index 1 - 4 are the wrong answers
     """
 
-    json_file = f'json/request_dump_{unique_ID}.json'
-
+    json_file = f'json/request_dump_{secret_key()}.json'
+    # json_file = f'json/request_dump_{unique_ID}.json'
+    questions_answers_list = None #initializing questions and asnwers list
 
     try:
         with open(json_file, 'r') as file:
@@ -84,17 +86,20 @@ def get_question_at_index(index):
                ]
     except FileNotFoundError as e:
         print('file not found', e)
-    except UnboundLocalError as e:
-        print('json_data is being called before it is assigned')
+    except IndexError as e:
+        print('Index out of range', e)
+        # print('json_data is being called before it is assigned', e)
+    except Exception as e:
+        print('An error occured', e)
 
-    return questions_answers_list
+    return questions_answers_list if questions_answers_list is not None else []
 
 def get_correct_answers():
     """
         This function loads the modified json file created to extract
         the rest of the data as needed.
     """
-    json_file = f'json/request_dump_{unique_ID}.json'
+    json_file = f'json/request_dump_{secret_key()}.json'
     with open(json_file, 'r') as file:
         data = json.load(file)
 
@@ -117,6 +122,6 @@ def get_scores(dict):
 
 if __name__ == '__main__':
     original_list = [1, 2, 3, 4, 5]
-    rearranged_list = rearrange_list(original_list)
+    rearranged_list = random.shuffle(original_list)
     print("Original list:", original_list)
     print("Rearranged list:", rearranged_list)
