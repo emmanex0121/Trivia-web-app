@@ -55,6 +55,8 @@ async def get_questions_from_url(url_api, uid):
             with open(json_file, 'w') as file:
                 json.dump(new_data, file)
             
+            print('saved file success')
+            
             # try:
             #     with open(json_file, 'r') as file:
             #         json_data = json.load(file)
