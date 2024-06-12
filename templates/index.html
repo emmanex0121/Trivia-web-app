@@ -24,14 +24,14 @@
     <!-- <script src="/static/scripts/start.js" type="text/javascript"></script> -->
   </head>
   <body>
-      <header class="container_header">
-        <div class="icon_header">
-          <a href="/"><h1>TG</h1></a>
-        </div>
-        <div class="welcome-heading">
-          <h1>Welcome to Trivia Guru</h1>
-        </div>
-      </header>
+    <header class="container_header">
+      <div class="icon_header">
+        <a href="/"><h1>TG</h1></a>
+      </div>
+      <div class="welcome-heading">
+        <h1>Welcome to Trivia Guru</h1>
+      </div>
+    </header>
     <!-- <div class="welcome-heading">
       <h1>Welcome to Trivia Guru</h1>
     </div> -->
@@ -43,7 +43,7 @@
             alt="hindu-large-text"
             class="hindu_image" />
         </div>
-        <div class="container_button_start">
+        <div class="container_button_start" id="container-button-start-large">
           <button class="button_start-random">quick play</button>
         </div>
       </div>
@@ -57,6 +57,14 @@
             browser does not support
           </video>
         </div>
+        <div class="container_button_start" id="container-button-start-small">
+          <button class="button_start-random">quick play</button>
+        </div>
+        <div class="button_trivia" id="container-button-trivia-mode-small">
+          <a href="/static/html/mode.html" class="button_trivia-mode"
+            >Select Mode</a
+          >
+        </div>
       </div>
 
       <div class="container_right">
@@ -68,7 +76,7 @@
             <h3>knowledge is power</h3>
           </div>
         </div>
-        <div class="button_trivia">
+        <div class="button_trivia" id="container-button-trivia-large">
           <a href="/static/html/mode.html" class="button_trivia-mode"
             >Select Mode</a
           >

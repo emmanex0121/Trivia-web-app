@@ -202,6 +202,10 @@ header {
   bottom: 2rem;
   /* right: 1.15rem; */
 }
+#container-button-start-small,
+#container-button-trivia-mode-small {
+  display: none;
+}
 
 /* Select mode section */
 .container_right {
@@ -833,28 +837,94 @@ header {
 }
 
 @media screen and (max-width: 800px) {
-  .container_content {
-    height: 80vh;
-    overflow: unset;
+  .icon_header {
+    right: 2.5rem;
   }
+  .icon_header h1 {
+    padding: 0.5rem;
+    font-size: var(--h3-font-size);
+  }
+
   .welcome-heading {
     font-size: var(--normal-font-size);
   }
-  .container_button-start {
-    bottom: 10rem;
-    left: 20rem;
+
+  #container-button-start-large,
+  #container-button-trivia-large {
+    display: none;
   }
 
+  .container_content {
+    height: 70vh;
+    overflow: hidden;
+  }
+
+  .container_left {
+    margin-right: 0;
+    padding-left: 1rem;
+  }
+  .hindu_image {
+    width: 150px;
+  }
   .container_center {
-    position: relative;
-    bottom: 2rem;
+    /* position: relative;
+    bottom: 6rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    /* margin-right: 1rem; */
+
+    /* width: 50%; */
+    /* background-color: #6c2faa; */
   }
 
-.guru_home {
-  bottom: -2rem;
-}
+  .guru_home {
+    bottom: -2rem;
+
+    position: relative;
+    top: 3rem;
+  }
   .guru_home-video {
-    width: 10rem;
+    width: 8rem;
     height: auto;
+  }
+
+  #container-button-start-small,
+  #container-button-trivia-mode-small {
+    display: inherit;
+  }
+  #container-button-start-small .button_start-random,
+  #container-button-trivia-mode-small .button_trivia-mode {
+    font-size: var(--smaller-font-size);
+  }
+  #container-button-start-small {
+    position: unset;
+  }
+  #container-button-trivia-mode-small {
+    white-space: pre;
+    position: relative;
+    left: -0.5rem;
+    top: 0;
+    margin-bottom: 4rem;
+  }
+
+  .container_right {
+    padding-left: 0;
+    overflow: hidden;
+  }
+
+  .text_top {
+    right: 2rem;
+  }
+  .text_bottom img {
+    width: 10rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .icon_header {
+    right: 0;
   }
 }
