@@ -923,7 +923,10 @@ header {
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 576px) {
+  header {
+    justify-content: center;
+  }
   .icon_header {
     right: 0;
   }
