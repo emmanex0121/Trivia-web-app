@@ -645,6 +645,7 @@ header {
 }
 .container_results-section .button_home {
   margin-left: 4rem;
+  margin-bottom: 2rem;
 }
 .result_text {
   margin-bottom: 2rem;
@@ -706,7 +707,7 @@ header {
 }
 
 .container_footer-color {
-    background-color: var(--body-color);
+  background-color: var(--body-color);
 }
 
 /* .container_button-start {
@@ -741,3 +742,52 @@ header {
     padding-left: 6rem;
   }
 } */
+
+@media screen and (min-width: 1700px) {
+  .icon_header {
+    /* left: 15rem; */
+    top: 0;
+    left: 25rem;
+  }
+
+  .container_content {
+    padding-left: 2rem;
+    padding-right: 1rem;
+    height: 60vh;
+    overflow: hidden;
+  }
+
+  .guru_home-video {
+    width: 20rem;
+  }
+
+  .text_top {
+    top: 10rem;
+  }
+  .text_bottom {
+    bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .icon_header {
+    /* left: 15rem; */
+    top: 0;
+    left: 15rem;
+  }
+  .container_content {
+    padding-left: 0;
+    padding-right: 0;
+    /* height: 50vh; */
+  }
+  .guru_home-video {
+    width: 15rem;
+  }
+  .text_bottom {
+    /* bottom: 6rem; */
+    right: 4rem;
+  }
+  .container_right {
+    justify-content: space-evenly;
+  }
+}
