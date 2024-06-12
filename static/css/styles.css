@@ -74,7 +74,7 @@ html {
 
 body {
   width: 100%;
-  /* height: 100vh; */
+  height: 100vh;
 
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -82,7 +82,7 @@ body {
   background-color: var(--body-color);
   color: var(--black-color);
 
-  position: relative;
+  /* position: relative; */
 }
 
 button {
@@ -90,19 +90,24 @@ button {
 }
 
 header {
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   color: var(--white-color);
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
 }
 .icon_header {
   width: fit-content;
   background-color: var(--black-color);
-  /* padding: 1rem; */
   border-radius: 3rem;
 
   position: relative;
-  top: 0;
-  left: 20rem;
+  right: 10rem;
 }
 .icon_header h1 {
   width: 100%;
@@ -743,51 +748,95 @@ header {
   }
 } */
 
-@media screen and (min-width: 1700px) {
-  .icon_header {
-    /* left: 15rem; */
-    top: 0;
-    left: 25rem;
-  }
-
+@media screen and (max-width: 1390px) {
   .container_content {
     padding-left: 2rem;
     padding-right: 1rem;
-    height: 60vh;
+    height: 70vh;
     overflow: hidden;
   }
 
   .guru_home-video {
     width: 20rem;
   }
-
-  .text_top {
-    top: 10rem;
-  }
-  .text_bottom {
-    bottom: 6rem;
-  }
 }
 
-@media screen and (min-width: 1320px) {
-  .icon_header {
-    /* left: 15rem; */
-    top: 0;
-    left: 15rem;
+@media screen and (max-width: 1152px) {
+  .welcome-heading {
+    text-align: center;
   }
   .container_content {
-    padding-left: 0;
-    padding-right: 0;
-    /* height: 50vh; */
+    gap: unset;
+  }
+  .container_left {
+    margin-right: 6rem;
+  }
+  .hindu_image {
+    width: 200px;
+  }
+  .button_start-random {
+    white-space: pre;
   }
   .guru_home-video {
     width: 15rem;
   }
+  .text_top {
+    top: 0;
+  }
   .text_bottom {
-    /* bottom: 6rem; */
-    right: 4rem;
+    bottom: -3rem;
   }
   .container_right {
     justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .icon_header {
+    right: 5rem;
+  }
+  .container_content {
+    height: 70vh;
+    padding-inline: 0;
+    overflow: unset;
+  }
+  .container_left {
+    margin-right: 2rem;
+  }
+
+  .guru_home-video {
+    width: 13rem;
+  }
+  /* .container_right {
+    justify-content: center; 
+    gap: 0.5rem;
+  } */
+  .text_top {
+    font-size: var(--smaller-font-size);
+  }
+  .text_bottom img {
+    width: 15rem;
+  }
+  .button_start-random,
+  .button_trivia-mode {
+    padding: 1rem 1rem;
+  }
+  .button_trivia-mode {
+    position: relative;
+    /* margin-bottom: 7rem; */
+    bottom: 1rem;
+    left: 0.5rem;
+  }
+  .container_foooter-links {
+    padding-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container_content {
+    height: 80vh;
+  }
+  .welcome-heading {
+    font-size: var(--normal-font-size);
   }
 }
