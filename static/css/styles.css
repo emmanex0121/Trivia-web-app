@@ -835,8 +835,26 @@ header {
 @media screen and (max-width: 800px) {
   .container_content {
     height: 80vh;
+    overflow: unset;
   }
   .welcome-heading {
     font-size: var(--normal-font-size);
+  }
+  .container_button-start {
+    bottom: 10rem;
+    left: 20rem;
+  }
+
+  .container_center {
+    position: relative;
+    bottom: 2rem;
+  }
+
+.guru_home {
+  bottom: -2rem;
+}
+  .guru_home-video {
+    width: 10rem;
+    height: auto;
   }
 }
