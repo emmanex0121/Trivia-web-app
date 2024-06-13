@@ -306,6 +306,7 @@ header {
   color: var(--black-color-light);
   font-size: var(--h4-font-size);
   font-weight: var(--font-bold);
+  white-space: nowrap;
 }
 
 .button_start-random:hover,
@@ -719,39 +720,7 @@ header {
   background-color: var(--body-color);
 }
 
-/* .container_button-start {
-  min-width: 20rem;
-} */
-
-/* Medium PC SCreen */
-/* @media screen and (max-width: 1740px) {
-  .hindu_image {
-    width: 25rem;
-    height: auto;
-  }
-
-  body {
-    background-color: #ffffff;
-  }
-
-  .container_content {
-    padding-left: 12rem;
-    box-shadow: none;
-  }
-} */
-
-/* @media screen and (min-width: 1650px) {
-  .container_content {
-    padding-left: 10rem;
-  }
-} */
-
-/* @media screen and (min-width: 1500px) {
-  .container_content {
-    padding-left: 6rem;
-  }
-} */
-
+/* MEDIA QUERIES */
 @media screen and (max-width: 1390px) {
   .container_content {
     padding-left: 2rem;
@@ -801,7 +770,7 @@ header {
   }
   .container_content {
     height: 70vh;
-    padding-inline: 0;
+    padding-inline: 1rem;
     overflow: unset;
   }
   .container_left {
@@ -811,10 +780,6 @@ header {
   .guru_home-video {
     width: 13rem;
   }
-  /* .container_right {
-    justify-content: center; 
-    gap: 0.5rem;
-  } */
   .text_top {
     font-size: var(--smaller-font-size);
   }
@@ -827,12 +792,15 @@ header {
   }
   .button_trivia-mode {
     position: relative;
-    /* margin-bottom: 7rem; */
     bottom: 1rem;
     left: 0.5rem;
   }
   .container_foooter-links {
     padding-bottom: 1rem;
+  }
+
+  .container_foooter-links {
+    font-size: var(--small-font-size);
   }
 }
 
@@ -857,6 +825,7 @@ header {
   .container_content {
     height: 70vh;
     overflow: hidden;
+    padding-inline: 0;
   }
 
   .container_left {
@@ -867,17 +836,11 @@ header {
     width: 150px;
   }
   .container_center {
-    /* position: relative;
-    bottom: 6rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     gap: 2rem;
-    /* margin-right: 1rem; */
-
-    /* width: 50%; */
-    /* background-color: #6c2faa; */
   }
 
   .guru_home {
@@ -921,13 +884,116 @@ header {
   .text_bottom img {
     width: 10rem;
   }
+
+  .container_foooter-links {
+    gap: 3rem;
+    font-size: var(--smaller-font-size);
+  }
 }
 
 @media screen and (max-width: 576px) {
   header {
-    justify-content: center;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    margin-inline: auto;
+    text-align: center;
+    /* gap: 2rem; */
+    /* flex-wrap: nowrap; */
   }
   .icon_header {
+    right: 1.5rem;
+  }
+
+  .container_hindu-image {
+    position: relative;
+    top: 0;
+  }
+  .hindu_image {
+    width: 110px;
+  }
+
+  .text_top {
     right: 0;
+    font-size: 0.5rem;
+  }
+  .text_top-english {
+    white-space: nowrap;
+  }
+  .text_bottom img {
+    width: 8rem;
+  }
+
+  .container_foooter-links {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .icon_header {
+    right: 3rem;
+    /* top: -1rem; */
+  }
+
+  .text-welcome {
+    display: none;
+  }
+
+  .container_content {
+    max-width: 300px;
+  }
+  .container_center {
+    width: 60%;
+    margin-left: 0.5rem;
+  }
+
+  .container_hindu-image {
+    top: -4.5rem;
+  }
+  .hindu_image {
+    width: 60px;
+  }
+
+  .text_bottom {
+    bottom: -5rem;
+  }
+  .text_bottom img {
+    width: 5rem;
+  }
+
+  .container_foooter-links {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .icon_header {
+    right: 1.5rem;
+  }
+
+  .container_content {
+    padding-inline: 0;
+    max-width: 260px;
+    /* overflow: visible; */
+  }
+  .container_left {
+    padding-left: 0.2rem;
+  }
+  .container_center {
+    overflow: visible;
+    margin-left: 0;
+  }
+  #container-button-trivia-mode-small .button_trivia-mode {
+    padding: 1rem;
+  }
+  .container_right {
+    overflow: visible;
+  }
+  .text_top {
+    right: 1.8rem;
+  }
+  .text_bottom {
+    position: relative;
+    left: -1.5rem;
+    bottom: -4rem;
   }
 }
