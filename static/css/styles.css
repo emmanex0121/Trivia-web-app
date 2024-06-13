@@ -200,6 +200,7 @@ header {
 
   position: relative;
   bottom: 2rem;
+  z-index: 10;
   /* right: 1.15rem; */
 }
 #container-button-start-small,
