@@ -38,6 +38,8 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
+  --very-small-font-size: 0.5rem;
+  --smallest-font-size: 0.25rem;
 
   /*=========== Font Weight =================*/
   --font-very-light: 200;
@@ -302,6 +304,7 @@ header {
   gap: 3rem;
 
   padding: 2rem;
+  background-color: var(--body-color);
 }
 .container_foooter-links a {
   color: var(--black-color-light);
@@ -386,7 +389,7 @@ header {
 /* ======================== START PAGE =================== */
 .container_content-start {
   max-width: 90rem;
-  background-color: var(--purple-color-light);
+  /* background-color: var(--purple-color-light); */
 }
 /* .start_buttons {
   width: 100%;
@@ -401,6 +404,7 @@ header {
   align-items: center;
   justify-content: space-around;
 
+  background-color: var(--purple-color-light);
   position: relative;
 }
 .container_button-prev {
@@ -513,6 +517,10 @@ header {
 
 .container_guru-head {
   position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .selected_question {
@@ -527,6 +535,8 @@ header {
   align-items: center;
   gap: 1rem;
   justify-content: space-around;
+
+  padding-inline: 2rem;
 }
 .container_answer {
   min-width: 30rem;
@@ -535,6 +545,10 @@ header {
   border: 1px solid var(--black-color);
   margin-bottom: 2rem;
   padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container_answer:hover {
   background-color: var(--body-color);
@@ -722,6 +736,37 @@ header {
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1440px) {
+  /* Game Start Page */
+  .start_form-content {
+    padding-bottom: 1rem;
+    justify-content: space-between1;
+  }
+  .container_circle {
+    width: 14rem;
+    height: 14rem;
+  }
+  .container_circle::before {
+    width: 13rem;
+    height: 13rem;
+  }
+  /* .container_guru-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  .container_guru-head img {
+    width: 80%;
+  }
+  .container_answers {
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  .container_answer {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 1390px) {
   .container_content {
     padding-left: 2rem;
@@ -732,6 +777,11 @@ header {
 
   .guru_home-video {
     width: 20rem;
+  }
+
+  /* Game start PAGE */
+  .start_container_footer-links {
+    padding: 1.5rem;
   }
 }
 
@@ -765,13 +815,6 @@ header {
   }
 
   /* MODE SELECT */
-
-  /* .mode_container_header {
-    max-width: 1152px;
-    margin: 0 auto;
-    position: relative;
-  } */
-
   .container_content-mode {
     /* height: 90vh; */
     max-width: 1150px;
@@ -791,6 +834,15 @@ header {
     position: relative;
 
     top: 1rem;
+  }
+
+  /* START GAME */
+  .start_container_footer-links {
+    padding: 2rem;
+  }
+
+  .container_answer {
+    min-width: 18rem;
   }
 }
 
@@ -826,10 +878,7 @@ header {
     left: 0.5rem;
   }
   .container_foooter-links {
-    padding-bottom: 1rem;
-  }
-
-  .container_foooter-links {
+    padding-block: 1rem;
     font-size: var(--small-font-size);
   }
 
@@ -864,6 +913,36 @@ header {
     right: -3rem;
     /* left: 0; */
     font-size: var(--h2-font-size);
+  }
+
+  /* START GAME */
+  .start_header h1 {
+    padding: 0.5rem;
+    font-size: var(--h3-font-size);
+  }
+  .start_heading {
+    font-size: var(--h3-font-size);
+  }
+  .container_circle {
+    width: 10rem;
+    height: 10rem;
+  }
+  .container_circle::before {
+    width: 9rem;
+    height: 9rem;
+  }
+  .container_guru-head img {
+    width: 50%;
+  }
+  .selected_question {
+    font-size: var(--small-font-size);
+  }
+  .container_answer {
+    min-width: 15rem;
+    padding: 1rem;
+  }
+  .start_container_footer-links {
+    font-size: var(--smaller-font-size);
   }
 }
 
@@ -985,6 +1064,46 @@ header {
     top: 2rem;
     font-size: var(--normal-font-size);
   }
+  .start_container_foooter-links {
+    position: fixed;
+    bottom: 0;
+  }
+
+  /* START PAGE */
+  .container_content-start {
+    height: max-content;
+  }
+  .start_form-content {
+    gap: 2rem;
+  }
+  .button_next,
+  .button_prev,
+  .button_submit {
+    font-size: var(--normal-font-size);
+  }
+  .container_trivia-guru {
+    margin-top: 1rem;
+  }
+  .container_button-prev {
+    top: 0;
+    left: 0;
+  }
+  .container_button-next,
+  .container_button-submit {
+    top: 0;
+    right: 0;
+  }
+  .container_answers {
+    margin-bottom: 4rem;
+    margin-top: 0;
+  }
+  .container_answer {
+    min-width: 20rem;
+  }
+
+  .selected_answer-label {
+    font-size: var(--normal-font-size);
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -1035,6 +1154,22 @@ header {
   .mode_text-select {
     display: none;
   }
+
+  /* GAME START PAGE */
+  .container_answers {
+    margin-bottom: 8rem;
+  }
+  .container_button-prev,
+  .container_button-next,
+  .container_button-submit {
+    top: unset;
+    bottom: 3rem;
+  }
+  /* .container_button-next,
+  .container_button-submit {
+    top: unset;
+    bottom: 3rem;
+  } */
 }
 
 @media screen and (max-width: 440px) {
@@ -1102,6 +1237,54 @@ header {
   }
   .mode_text-top {
     right: -3rem !important;
+  }
+
+  /* GAME START MODE */
+  .start_header h1 {
+    font-size: var(--smaller-font-size);
+  }
+  .start_heading {
+    font-size: var(--normal-font-size);
+  }
+  .selected_question {
+    font-size: var(--very-small-font-size);
+    padding-inline: 1rem;
+  }
+  .container_answers {
+    padding-inline: 1rem;
+  }
+  .container_answer {
+    min-width: 15rem;
+  }
+  .selected_answer-label {
+    font-size: var(--smaller-font-size);
+  }
+
+  .button_submit {
+    padding: 1rem 2rem;
+    font-size: var(--h3-font-size);
+  }
+  .button_prev,
+  .button_next {
+    padding: 0.5rem 0.5rem;
+    font-size: var(--small-font-size);
+  }
+  .button_next {
+    padding: 0.5rem 1.2rem;
+  }
+  .container_button-submit,
+  .container_button-next {
+    /* min-width: max-content; */
+    /* right: -1rem; */
+    padding-inline: 1rem;
+  }
+  .container_button-prev {
+    bottom: 4rem;
+    left: -1rem;
+  }
+  .container_button-next {
+    bottom: 4rem;
+    /* right: -1rem; */
   }
 }
 
