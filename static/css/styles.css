@@ -948,17 +948,20 @@ header {
   }
 
   .container_hindu-image {
-    top: -4.5rem;
+    top: -5.8rem;
   }
   .hindu_image {
     width: 60px;
   }
 
+  .container_right {
+    /* overflow: visible; */
+  }
   .text_bottom {
     bottom: -5rem;
   }
   .text_bottom img {
-    width: 5rem;
+    width: 5.5rem;
   }
 
   .container_foooter-links {
