@@ -329,7 +329,7 @@ header {
 .container_content-start,
 .container_content-score {
   margin-inline: auto;
-  height: 80vh;
+  height: 75vh;
   background-color: #ffffff;
 }
 .container_content-mode {
@@ -763,6 +763,35 @@ header {
   .container_right {
     justify-content: space-evenly;
   }
+
+  /* MODE SELECT */
+
+  /* .mode_container_header {
+    max-width: 1152px;
+    margin: 0 auto;
+    position: relative;
+  } */
+
+  .container_content-mode {
+    /* height: 90vh; */
+    max-width: 1150px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .form_content {
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+  }
+  .section_category,
+  .section_difficulty,
+  .container_button-start {
+    min-width: 10rem;
+  }
+  .container_button-start {
+    position: relative;
+
+    top: 1rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -802,6 +831,39 @@ header {
 
   .container_foooter-links {
     font-size: var(--small-font-size);
+  }
+
+  /* MODE SELECT */
+  .form_content {
+    max-width: 95%;
+    margin-inline: auto;
+  }
+  .section_category,
+  .section_difficulty {
+    /* min-width: 5rem; */
+    width: 1rem;
+    align-self: flex-end;
+
+    position: relative;
+    bottom: 5rem;
+  }
+
+  .section_category {
+    margin-left: 5rem;
+  }
+  .section_difficulty {
+    margin-right: 5rem;
+  }
+  .container_button-start {
+    top: unset;
+    bottom: 5rem;
+  }
+
+  .mode_text-top {
+    top: 3rem;
+    right: -3rem;
+    /* left: 0; */
+    font-size: var(--h2-font-size);
   }
 }
 
@@ -890,6 +952,39 @@ header {
     gap: 3rem;
     font-size: var(--smaller-font-size);
   }
+
+  /* MODE SELECT */
+  .button_trivia-start {
+    white-space: nowrap;
+  }
+  .form_content {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .section_category,
+  .section_difficulty {
+    align-self: center;
+    min-width: 20rem;
+    margin: 0;
+  }
+  .section_category,
+  .section_difficulty,
+  .container_button-start {
+    position: unset;
+    /* flex-grow: 1; */
+  }
+  .container_button-start {
+    order: 1;
+    /* flex-grow: 2; */
+    margin-top: 2rem;
+  }
+  .mode_text-top {
+    right: -2rem;
+    top: 2rem;
+    font-size: var(--normal-font-size);
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -927,6 +1022,19 @@ header {
   .container_foooter-links {
     gap: 2rem;
   }
+
+  /* MODE SELECT */
+  .mode_text-top {
+    right: -2rem;
+    top: 2rem;
+    font-size: var(--small-font-size);
+  }
+  .mode_icon-header {
+    right: 5rem;
+  }
+  .mode_text-select {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 440px) {
@@ -954,9 +1062,6 @@ header {
     width: 60px;
   }
 
-  .container_right {
-    /* overflow: visible; */
-  }
   .text_bottom {
     bottom: -5rem;
   }
@@ -966,6 +1071,37 @@ header {
 
   .container_foooter-links {
     gap: 1rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  /* MODE SELECT */
+  .mode_icon-header {
+    right: 0.5rem !important;
+  }
+  /* .container_content-mode {
+    min-width: 280px;
+    width: 100%;
+  } */
+  .form_content {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .section_category,
+  .section_difficulty {
+    min-width: 7rem;
+  }
+  .section_category label,
+  .section_difficulty label {
+    white-space: nowrap;
+  }
+  .trivia_category,
+  .trivia_difficulty {
+    min-width: 7rem;
+    width: 50px;
+  }
+  .mode_text-top {
+    right: -3rem !important;
   }
 }
 
@@ -1000,4 +1136,6 @@ header {
     left: -1.5rem;
     bottom: -4rem;
   }
+
+  /* MODE SELECT */
 }
