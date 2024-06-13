@@ -177,6 +177,7 @@ header {
   border: 1px solid var(--black-color);
   background-color: var(--body-color);
   padding: 2rem 3rem;
+  color: var(--black-color);
 
   cursor: pointer;
 
