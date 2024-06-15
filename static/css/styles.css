@@ -431,6 +431,7 @@ header {
   background-color: #ffffff;
   border: 1px solid var(--black-color);
   padding: 1rem 3rem;
+  color: var(--black-color);
 
   cursor: pointer;
   transition: 0.1s ease-in;
