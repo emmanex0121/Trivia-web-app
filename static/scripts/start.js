@@ -125,6 +125,8 @@ $(document).ready(function () {
   }
 
   // console.log($("selcted_answer-radio"));
+  // click function on the container for answers selected to trigger the change on the
+  // input selection box
   $(".container_answer").on("click", function () {
     // $("selcted_answer-radio").prop("checked", true);
     $(this).find("input[type='radio']").prop("checked", true).trigger("change");
