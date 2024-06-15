@@ -1359,7 +1359,7 @@ span:first-child {
     width: 60px;
   }
 
-  .text_top {
+  .container_right .text_top {
     top: -4rem;
   }
 
