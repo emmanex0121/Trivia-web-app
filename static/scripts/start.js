@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  // Tries to force the video to be rendered and autoplayed on ios devices
-
   if (!sessionStorage.getItem("route_id")) {
     sessionStorage.setItem("route_id", "0");
   }
@@ -61,21 +59,12 @@ $(document).ready(function () {
     console.log("not_Working");
   });
 
-  // const difficulty = $("#trivia-difficulty").val();
-  // console.log(difficulty);
-  // console.log($("#trivia-difficulty").val());
-  // console.log("BUHAHAHAHAHHAHAA");
-
   $(".button_trivia-start").on("click", function () {
     sessionStorage.clear();
-
-    // console.log("Testingg");
-    // console.log("Testingg");
 
     const difficulty = $("#trivia-difficulty").val();
     const category = $("#trivia-category").val();
     console.log(difficulty, category);
-    // console.log("Testingg");
 
     sessionStorage.setItem("difficulty", difficulty);
     sessionStorage.setItem("category", category);
@@ -131,15 +120,6 @@ $(document).ready(function () {
     // $("selcted_answer-radio").prop("checked", true);
     $(this).find("input[type='radio']").prop("checked", true).trigger("change");
   });
-
-  // $(".container_answer").on("click", function () {
-  //   // for (let i = 0; i < 4; i++) {
-  //   //   $('input[id="selected_answer-' + i + '"]')
-  //   //     .prop("checked", true)
-  //   //     .trigger("click");
-  //   // }
-  //   $(this).find('input[type="radio"]').prop("checked", true).trigger("click");
-  // });
 
   // Event handler for radio button click
   $('input[name="selected_answer"]').on("change", function () {
@@ -260,7 +240,8 @@ $(document).ready(function () {
     }
   }
 
+  // Tries to force the video to be rendered and autoplayed on ios devices
   const guruHomeVideo = $("#guru-home-video")[0];
-  guruHomeVideo.autoplay = true;
+  guruHomeVideo.playsinline = true;
   guruHomeVideo.load();
 });
