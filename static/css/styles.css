@@ -1348,12 +1348,19 @@ span:first-child {
     width: 60%;
     margin-left: 0.5rem;
   }
+  /* .container_right {
+
+  } */
 
   .container_hindu-image {
     top: -6rem;
   }
   .hindu_image {
     width: 60px;
+  }
+
+  .text_top {
+    top: -6rem;
   }
 
   .text_bottom {
