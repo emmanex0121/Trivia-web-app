@@ -124,6 +124,12 @@ $(document).ready(function () {
     $(".button_submit").prop("disabled", false);
   }
 
+  // console.log($("selcted_answer-radio"));
+  $(".container_answer").on("click", function () {
+    // $("selcted_answer-radio").prop("checked", true);
+    $(this).find("input[type='radio']").prop("checked", true).trigger("change");
+  });
+
   // $(".container_answer").on("click", function () {
   //   // for (let i = 0; i < 4; i++) {
   //   //   $('input[id="selected_answer-' + i + '"]')
@@ -134,7 +140,7 @@ $(document).ready(function () {
   // });
 
   // Event handler for radio button click
-  $('input[name="selected_answer"]').on("click", function () {
+  $('input[name="selected_answer"]').on("change", function () {
     const selectedAnswer = $('input[name="selected_answer"]:checked').val();
     sessionStorage.setItem("radioSelection" + route, selectedAnswer);
     // restoreSelectedAnswer(); //reload selections upon click
