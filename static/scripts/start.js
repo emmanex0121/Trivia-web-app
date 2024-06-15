@@ -242,6 +242,9 @@ $(document).ready(function () {
 
   // Tries to force the video to be rendered and autoplayed on ios devices
   const guruHomeVideo = $("#guru-home-video")[0];
-  guruHomeVideo.playsinline = true;
+  guruHomeVideo.autoplay = true;
+  guruHomeVideo.loop = true;
+  guruHomeVideo.muted = true;
+  guruHomeVideo.playsInline = true;
   guruHomeVideo.load();
 });
