@@ -19,10 +19,10 @@
       <div class="icon_header">
         <a href="/"><h1>TG</h1></a>
       </div>
+      <div class="mode_heading start_heading">
+        <h1>TRIVIA GURU</h1>
+      </div>
     </header>
-    <div class="mode_heading">
-      <h1>TRIVIA GURU</h1>
-    </div>
     <div class="display_none" id="answers_data">
       {{ correct_answers_list | safe }}
     </div>
@@ -33,24 +33,31 @@
       </div>
       {% for question in questions %}
       <div class="section_questions" id="{{ question.question_id }}">
-        <h2>
-          <span>{{ question.question_id + 1 }}.</span> {{ question.question |
-          safe }}
+        <h2 id="results-question-section">
+          <span>{{ question.question_id + 1 }}.</span>
+          <span>{{ question.question | safe }}</span>
         </h2>
-        <ul>
-          <div class="li-container_answers">
-            {% for answer in question.answers %}
-            <li
-              id="answer_{{ loop.index }}"
-              class="li_answer question_{{ question.question_id }}">
-              {{ answer | safe }}
-            </li>
-            {% endfor %}
-          </div>
-        </ul>
+        <!-- <ul> -->
+        <div class="li-container_answers">
+          {% for answer in question.answers %}
+          <li
+            id="answer_{{ loop.index }}"
+            class="li_answer question_{{ question.question_id }}">
+            {{ answer | safe }}
+          </li>
+          {% endfor %}
+        </div>
+        <!-- </ul> -->
       </div>
       {% endfor %}
-      <button class="button_home"><a href="/">HOME</a></button>
+      <div class="nav-home-mode">
+        <button class="button_home results_button_home">
+          <a href="/static/html/mode.html">MODE</a>
+        </button>
+        <button class="button_home results_button_home">
+          <a href="/">HOME</a>
+        </button>
+      </div>
     </div>
 
     <footer class="container_footer container_footer-color">
