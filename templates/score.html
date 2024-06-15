@@ -26,13 +26,13 @@
       <div class="icon_header">
         <a href="/"><h1>TG</h1></a>
       </div>
+      <div class="mode_heading start_heading">
+        <h1>TRIVIA GURU</h1>
+      </div>
     </header>
-    <div class="mode_heading">
-      <h1>TRIVIA GURU</h1>
-    </div>
 
     <div class="container_content-score">
-      <div class="container_score-comment">
+      <div class="container_score-text">
         <h2 class="score_comment_text">{{ comment | safe }}</h2>
         <div class="container_score">{{ score | safe }}/10</div>
       </div>
@@ -74,11 +74,13 @@
           <h2>{{ comment_subtitle | safe }}</h2>
         </div>
         <div class="score_buttons">
-          <div><button class="button_results-view">View Results</button></div>
-          <div>
+          <div class="score_button_result">
+            <button class="button_results-view">View Results</button>
+          </div>
+          <div class="score_button_restart">
             <button class="button_restart">{{ restart | safe }}</button>
           </div>
-          <div>
+          <div class="score_button_home">
             <button class="button_home"><a href="/">Home</a></button>
           </div>
         </div>

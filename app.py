@@ -95,11 +95,11 @@ def submit_play():
     if score < 5:
         comment = "Not Great!"
         # comment_subtitle = "You can do better! You Whackamole!"
-        comment_subtitle = "You brought the guru intense shame. He has perished"
+        comment_subtitle = "You brought the guru intense shame. He has perished!"
         restart = "Try Again Gasbag"
     elif score < 9:
         comment = "Good!"
-        comment_subtitle = "This guru is only mildly impressed"
+        comment_subtitle = "The guru is only mildly impressed."
         restart = "Try Again"
     else:
         comment = "Awesome!!!"
