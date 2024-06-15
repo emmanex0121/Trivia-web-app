@@ -42,28 +42,38 @@
       {% if score < 5 %}
       <div class="container_guru-result" id="container_guru-result-1">
         <!-- Guru Video here -->
-        <video autoplay loop muted class="guru_score-video">
+        <video autoplay loop muted playsinline class="guru_score-video">
           <source
             src="/static/assets/animations/guru-dead.webm"
             type="video/webm" />
+          <source
+            src="/static/assets/animations/guru-dead.mp4"
+            type="video/mp4" />
           browser does not support
         </video>
       </div>
       {% elif score < 9 %}
       <div class="container_guru-result" id="container_guru-result-2">
-        <video autoplay loop muted class="guru_score-video">
+        <video autoplay loop muted playsinline class="guru_score-video">
           <source
             src="/static/assets/animations/guru-passive.webm"
             type="video/webm" />
+          <source
+            src="/static/assets/animations/guru-passive.mp4"
+            type="video/mp4" />
+
           browser does not support
         </video>
       </div>
       {% else %}
       <div class="container_guru-result" id="container_guru-result-1">
-        <video autoplay loop muted class="guru_score-video">
+        <video autoplay loop muted playsinline class="guru_score-video">
           <source
             src="/static/assets/animations/guru-enlightened.webm"
             type="video/webm" />
+          <source
+            src="/static/assets/animations/guru-enlightened.mp4"
+            type="video/mp4" />
           browser does not support
         </video>
       </div>
