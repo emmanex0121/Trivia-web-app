@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  // Tries to force the video to be rendered and autoplayed on ios devices
+
   if (!sessionStorage.getItem("route_id")) {
     sessionStorage.setItem("route_id", "0");
   }
@@ -207,6 +209,7 @@ $(document).ready(function () {
   // FOR RESULTS PAGE
   // const correctAnswersList = JSON.parse($("#answers_data").data("correct-answers"));
   // let correctAnswersList = $("#answers_data").data("correct-answers");
+  // console.log($("#answers_data").text());
   let correctAnswersList = JSON.parse($("#answers_data").text());
   console.log(correctAnswersList);
   console.log(typeof correctAnswersList);
@@ -248,4 +251,8 @@ $(document).ready(function () {
       });
     }
   }
+
+  const guruHomeVideo = $("#guru-home-video")[0];
+  guruHomeVideo.autoplay = true;
+  guruHomeVideo.load();
 });
