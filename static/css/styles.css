@@ -702,7 +702,7 @@ header {
   gap: 1rem;
 }
 
-span:first-child {
+#results-question-section span:first-child {
   font-size: 2rem;
   margin-top: -0.5rem;
 }
@@ -1217,7 +1217,7 @@ span:first-child {
   #results-question-section {
     font-size: var(--h3-font-size);
   }
-  span:first-child {
+  #results-question-section span:first-child {
     font-size: 1.6rem;
   }
   .li_answer {
@@ -1323,7 +1323,7 @@ span:first-child {
   #results-question-section {
     font-size: var(--normal-font-size);
   }
-  span:first-child {
+  #results-question-section span:first-child {
     font-size: 1.45rem;
   }
   .li_answer {
@@ -1487,7 +1487,7 @@ span:first-child {
   #results-question-section {
     font-size: var(--small-font-size);
   }
-  span:first-child {
+  #results-question-section span:first-child {
     font-size: 1rem;
     margin-top: -0.2rem;
   }
