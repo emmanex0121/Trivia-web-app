@@ -4,6 +4,7 @@ Flask[async]
 gunicorn
 # flask-asgi
 # uvicorn
+urllib3
 requests
 aiohttp
 asyncio
