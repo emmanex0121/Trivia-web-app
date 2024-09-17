@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-import json, random, asyncio
+import json
+import random
+import asyncio
 from flask import Flask, render_template, redirect, url_for, jsonify, request
 # from flask_session import Session
+# from models.data import secret_key, get_questions_from_url, get_scores
+# from models.data import get_question_at_index, get_correct_answers
 from models.data import *
 # from uuid import uuid4
 
@@ -12,12 +16,19 @@ app.config['SECRET_KEY'] = secret_key()
 # unique_ID = str(uuid4())
 secret_key = secret_key()
 
+
 @app.route('/')
 def index():
+    """
+        Index Page: Route that serves default home page
+    """
     return render_template('index.html')
 
 @app.route('/play_now', strict_slashes=False)
 def play_now():
+    """
+        Play Now: Route that handles instant play with random settings 
+    """
     # Logic to manipulate GET request data
 
     # For random questions 10
@@ -26,31 +37,40 @@ def play_now():
 
     # question_list = get_questions(url)
     asyncio.run(get_questions_from_url(url, secret_key))
+    # await get_questions_from_url(url, secret_key)
 
     return redirect(url_for('play_page', route_id=0))
 
 @app.route('/play_now/<int:route_id>', strict_slashes=False)
 def play_page(route_id):
+    """
+        Play Page
+    """
+    print("testing")
+    my_list = asyncio.run(get_question_at_index(route_id, secret_key))
 
-    my_list = get_question_at_index(route_id, secret_key)
+    # my_list = await get_question_at_index(route_id, secret_key)
+
     if not my_list:
         return "No questions and answers available", 404
-    question = {"id": route_id, "text": my_list[0]}
 
+    question = {"id": route_id, "text": my_list[0]}
     answers_list = [
         {"id": 1, "text": my_list[1]},
         {"id": 2, "text": my_list[2]},
         {"id": 3, "text": my_list[3]},
         {"id": 4, "text": my_list[4]}
     ]
-    print(answers_list[0])
+
     random.shuffle(answers_list)
-    print(answers_list[0])
 
     return render_template('start.html', question=question, answers_list=answers_list)
 
 @app.route('/submit_mode', methods=['POST', 'GET'])
 def submit_mode():
+    """
+        Submit mode: Route that handles mode selections
+    """
     print("Test")
     difficulty = request.form.get('trivia_difficulty')
     category = request.form.get('trivia_category')
@@ -78,6 +98,10 @@ def submit_mode():
 
 @app.route('/score', methods=['POST'])
 def submit_play():
+    """
+        Submit Play: From score page, route that restartsthe game using
+        Existing settings
+    """
     # print('hello')
     
     # Parse the JSON string from the form field
@@ -108,6 +132,9 @@ def submit_play():
 
 @app.route('/results', strict_slashes=False)
 def results():
+    """
+        Results Page: Provides the results
+    """
     questions = []
 
     for item in range(10):

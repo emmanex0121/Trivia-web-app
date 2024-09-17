@@ -1,22 +1,22 @@
 import random, requests, json, os, asyncio, aiohttp
+import aiofiles
 from uuid import uuid4
 
 # unique_ID = str(uuid4())
 
 
 def secret_key():
-
     try:
-        with open('../secret_key', 'r') as file:
+        with open('../secret_key', 'r', encoding='utf-8') as file:
             key = file.read()
     except FileNotFoundError:
-        with open('secret_key', 'w') as file:
+        with open('secret_key', 'w', encoding='utf-8') as file:
             secret_key = str(uuid4())
             os.environ['SECRET_KEY'] = secret_key
-            file.write(secret_key)
             key = secret_key
 
     return key
+
 
 # def rearrange_list(input_list):
 #     # Use random.shuffle() to shuffle the elements of the list in place
@@ -24,94 +24,140 @@ def secret_key():
 #     random.shuffle(new_list)
 #     return new_list
 
+# async def get_questions_from_url(url_api, uid):
+#     """
+#         collects the data from the API, strips it,
+#         takes only the needed questions and answers information,
+#         stores the data in a file, 
+#         returns the a new list with trimmed data
+#     """
+#     async with aiohttp.ClientSession() as session:
+#         async with session.get(url_api) as response:
+#             data = await response.json()
+#             # print(data)
+#             # data = data['results']
+#             data = data.get('results', [])
+#             # print(data)
+
+#             new_data = [
+#                     {'question': index['question'],
+#                     'correct_answer': index['correct_answer'],
+#                     'incorrect_answers': index['incorrect_answers']}
+#                     for index in data
+#                 ]
+            
+#             # json_file = f'json/request_dump_{unique_ID}.json'
+#             json_file = f'json/request_dump_{uid}.json'
+
+#             try:
+#                 # Ensure the directory exists
+#                 os.makedirs(os.path.dirname(json_file), exist_ok=True)
+
+#                 with open(json_file, 'w', encoding='utf-8') as file:
+#                     json.dump(new_data, file)
+#                 print('File saved successfully')
+
+#             except FileNotFoundError:
+#                 print('File not found error occurred')
+#             except PermissionError:
+#                 print('Permission error occurred')
+#             except Exception as e:
+#                 print(f'Unexpected error occurred: {e}')
+
+
 async def get_questions_from_url(url_api, uid):
-    """
-        collects the data from the API, strips it,
-        takes only the needed questions and answers information,
-        stores the data in a file, 
-        returns the a new list with trimmed data
-    """
     async with aiohttp.ClientSession() as session:
         async with session.get(url_api) as response:
             data = await response.json()
-            # print(data)
-            # data = data['results']
             data = data.get('results', [])
-            # print(data)
 
             new_data = [
-                    {'question': index['question'],
-                    'correct_answer': index['correct_answer'],
-                    'incorrect_answers': index['incorrect_answers']}
-                    for index in data
-                ]
-            
-    # response = await requests.get(url_api)
-    # data = response.json()['results']
-            # print(data)
-            # new_data = []
+                {'question': index['question'],
+                 'correct_answer': index['correct_answer'],
+                 'incorrect_answers': index['incorrect_answers']}
+                for index in data
+            ]
 
-            # for index in data:
-            #     new_data.append({'question': index['question'],
-            #                     'correct_answer': index['correct_answer'],
-            #                     'incorrect_answers': index['incorrect_answers']})
-
-            # json_file = f'json/request_dump_{unique_ID}.json'
             json_file = f'json/request_dump_{uid}.json'
 
             try:
                 # Ensure the directory exists
                 os.makedirs(os.path.dirname(json_file), exist_ok=True)
 
-                with open(json_file, 'w') as file:
-                    json.dump(new_data, file)
+                async with aiofiles.open(json_file, 'w', encoding='utf-8') as file:
+                    await file.write(json.dumps(new_data))
                 print('File saved successfully')
-            except FileNotFoundError:
-                print('File not found error occurred')
-            except PermissionError:
-                print('Permission error occurred')
+
             except Exception as e:
                 print(f'Unexpected error occurred: {e}')
 
-            
-            # try:
-            #     with open(json_file, 'r') as file:
-            #         json_data = json.load(file)
-            # except FileNotFoundError as e:
-            #     print('file not found', e)
-
-
 async def get_question_at_index(index, uid):
-    """
-        Returns a list of question and the answers at index provided
-        index 0 is the correct answer
-        index 1 - 4 are the wrong answers
-    """
-
     json_file = f'json/request_dump_{uid}.json'
-    # json_file = f'json/request_dump_{unique_ID}.json'
-    questions_answers_list = None #initializing questions and asnwers list
+
+    if not os.path.exists(json_file):
+        print(f'File {json_file} does not exist.')
+        return []
 
     try:
-        with open(json_file, 'r') as file:
-            json_data = await json.load(file)
+        async with aiofiles.open(json_file, 'r', encoding='utf-8') as file:
+            json_data = json.loads(await file.read())
+            print("File loaded successfully")
 
             data = json_data[index]
-            questions_answers_list = [data['question'],
-               data['correct_answer'],
-               data['incorrect_answers'][0],
-               data['incorrect_answers'][1],
-               data['incorrect_answers'][2]
-               ]
+            questions_answers_list = [
+                data['question'],
+                data['correct_answer'],
+                data['incorrect_answers'][0],
+                data['incorrect_answers'][1],
+                data['incorrect_answers'][2]
+            ]
     except FileNotFoundError as e:
-        print('file not found', e)
+        print('File not found', e)
+        return []
     except IndexError as e:
         print('Index out of range', e)
-        # print('json_data is being called before it is assigned', e)
+        return []
     except Exception as e:
-        print('An error occured', e)
+        print('An error occurred', e)
+        return []
 
-    return questions_answers_list if questions_answers_list is not None else []
+    return questions_answers_list
+
+# async def get_question_at_index(index, uid):
+#     """
+#         Returns a list of question and the answers at index provided
+#         index 0 is the correct answer
+#         index 1 - 4 are the wrong answers
+#     """
+
+#     json_file = f'json/request_dump_{uid}.json'
+#     questions_answers_list = None #initializing questions and asnwers list
+
+#     if not os.path.exists(json_file):
+#         print(f'File {json_file} does not exist.')
+#         return []
+
+#     try:
+#         with open(json_file, 'r', encoding='utf-8') as file:
+#             json_data = json.load(file)
+#             print("file loaded succesfully")
+
+#             data = json_data[index]
+#             questions_answers_list = [data['question'],
+#                data['correct_answer'],
+#                data['incorrect_answers'][0],
+#                data['incorrect_answers'][1],
+#                data['incorrect_answers'][2]
+#                ]
+#     except FileNotFoundError as e:
+#         print('file not found', e)
+#     except IndexError as e:
+#         print('Index out of range', e)
+#         # print('json_data is being called before it is assigned', e)
+#     except Exception as e:
+#         print('An error occured', e)
+
+#     return questions_answers_list if questions_answers_list is not None else []
 
 def get_correct_answers(uid):
     """
@@ -119,7 +165,7 @@ def get_correct_answers(uid):
         the rest of the data as needed.
     """
     json_file = f'json/request_dump_{uid}.json'
-    with open(json_file, 'r') as file:
+    with open(json_file, 'r', encoding='utf-8') as file:
         data = json.load(file)
 
     my_list = []

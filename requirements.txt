@@ -5,6 +5,7 @@ urllib3>=2.2.3
 requests>=2.32.3
 aiohttp>=3.9.5
 asyncio>=3.4.3
+aiofiles
 # SQLAlchemy
 # Flask-SQLAlchemy
 Jinja2>=2.11.2
