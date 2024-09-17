@@ -1,18 +1,17 @@
-aiohttp
 # Flask
 Flask[async]
-gunicorn
+gunicorn>=20.1.0
 urllib3>=2.2.3
 requests>=2.32.3
 aiohttp>=3.9.5
-asyncio
-SQLAlchemy
-Flask-SQLAlchemy
-Jinja2
-Werkzeug
+asyncio>=3.4.3
+# SQLAlchemy
+# Flask-SQLAlchemy
+Jinja2>=2.11.2
+Werkzeug>=1.0.1
 # Additional packages
 Flask-WTF
-Flask-Login
+# Flask-Login
 Flask-Migrate
 python-dotenv
 # --upgrade urllib3 requests
