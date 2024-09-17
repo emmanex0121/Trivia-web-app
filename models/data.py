@@ -36,26 +36,43 @@ async def get_questions_from_url(url_api, uid):
             data = await response.json()
             # print(data)
             # data = data['results']
-            data = data.get('results')
+            data = data.get('results', [])
             # print(data)
+
+            new_data = [
+                    {'question': index['question'],
+                    'correct_answer': index['correct_answer'],
+                    'incorrect_answers': index['incorrect_answers']}
+                    for index in data
+                ]
             
     # response = await requests.get(url_api)
     # data = response.json()['results']
             # print(data)
-            new_data = []
+            # new_data = []
 
-            for index in data:
-                new_data.append({'question': index['question'],
-                                'correct_answer': index['correct_answer'],
-                                'incorrect_answers': index['incorrect_answers']})
+            # for index in data:
+            #     new_data.append({'question': index['question'],
+            #                     'correct_answer': index['correct_answer'],
+            #                     'incorrect_answers': index['incorrect_answers']})
 
             # json_file = f'json/request_dump_{unique_ID}.json'
             json_file = f'json/request_dump_{uid}.json'
 
-            with open(json_file, 'w') as file:
-                json.dump(new_data, file)
-            
-            print('saved file success')
+            try:
+                # Ensure the directory exists
+                os.makedirs(os.path.dirname(json_file), exist_ok=True)
+
+                with open(json_file, 'w') as file:
+                    json.dump(new_data, file)
+                print('File saved successfully')
+            except FileNotFoundError:
+                print('File not found error occurred')
+            except PermissionError:
+                print('Permission error occurred')
+            except Exception as e:
+                print(f'Unexpected error occurred: {e}')
+
             
             # try:
             #     with open(json_file, 'r') as file:
@@ -64,7 +81,7 @@ async def get_questions_from_url(url_api, uid):
             #     print('file not found', e)
 
 
-def get_question_at_index(index, uid):
+async def get_question_at_index(index, uid):
     """
         Returns a list of question and the answers at index provided
         index 0 is the correct answer
@@ -77,7 +94,7 @@ def get_question_at_index(index, uid):
 
     try:
         with open(json_file, 'r') as file:
-            json_data = json.load(file)
+            json_data = await json.load(file)
 
             data = json_data[index]
             questions_answers_list = [data['question'],

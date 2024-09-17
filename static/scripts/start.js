@@ -140,7 +140,7 @@ $(document).ready(function () {
   // Collects all the input, stores them in an object
   // stringify them and send along with the form to the app server
   $(".button_submit").on("click", function () {
-    console.log("HELOOOOOOOOOOOOO");
+    // console.log("HELOOOOOOOOOOOOO");
 
     const selectedAnswersList = {};
     for (let i = 0; i < 10; i++) {
@@ -168,6 +168,16 @@ $(document).ready(function () {
   $(".button_results-view").on("click", function () {
     window.location.href = "/results";
   });
+
+  // $(".results_button_mode").on("click", function () {
+  //   window.location.href = "../static/html/mode.html";
+  // });
+  // console.log(hehe);
+
+  // $(".results_button_home").on("click", function () {
+  //   console.log("Hello");
+  //   window.location.href = "/";
+  // });
 
   // ajax to send post request when restarti clicked
   // gets users current settings/preferences and uses

@@ -2,6 +2,8 @@ aiohttp
 # Flask
 Flask[async]
 gunicorn
+# flask-asgi
+# uvicorn
 requests
 aiohttp
 asyncio
@@ -14,3 +16,4 @@ Flask-WTF
 Flask-Login
 Flask-Migrate
 python-dotenv
+--upgrade urllib3 requests

@@ -17,14 +17,15 @@ def index():
     return render_template('index.html')
 
 @app.route('/play_now', strict_slashes=False)
-async def play_now():
+def play_now():
     # Logic to manipulate GET request data
 
     # For random questions 10
     url = 'https://opentdb.com/api.php?amount=10&type=multiple'
+    print("muhehe")
 
     # question_list = get_questions(url)
-    await get_questions_from_url(url, secret_key)
+    asyncio.run(get_questions_from_url(url, secret_key))
 
     return redirect(url_for('play_page', route_id=0))
 
@@ -49,39 +50,35 @@ def play_page(route_id):
     return render_template('start.html', question=question, answers_list=answers_list)
 
 @app.route('/submit_mode', methods=['POST', 'GET'])
-async def submit_mode():
+def submit_mode():
+    print("Test")
     difficulty = request.form.get('trivia_difficulty')
     category = request.form.get('trivia_category')
 
     print(dict(request.form))
     print(difficulty, category)
-    print(dict(request.headers))
+    # print(dict(request.headers))
 
-    if (difficulty == 'any' and category == 'any'):
-        redirect_url = url_for('play_now')
-    elif difficulty == 'any':
-        url = f'https://opentdb.com/api.php?amount=10&category={category}&type=multiple'
-        await get_questions_from_url(url, secret_key)
-        redirect_url = url_for('play_page', route_id=0)
-    elif category == 'any':
-        url = f'https://opentdb.com/api.php?amount=10&difficulty={difficulty}&type=multiple'
-        await get_questions_from_url(url, secret_key)
-        redirect_url = url_for('play_page', route_id=0)
-    else:
-        url = f'https://opentdb.com/api.php?amount=10&category={category}&difficulty={difficulty}&type=multiple'
-        await get_questions_from_url(url, secret_key)
-        redirect_url = url_for('play_page', route_id=0)
+    url = 'https://opentdb.com/api.php?amount=10'
+    if difficulty != 'any':
+        url += f'&difficulty={difficulty}'
+    if category != 'any':
+        url += f'&category={category}'
+
+    # Ensure the async function completes
+    asyncio.run(get_questions_from_url(url, secret_key))
     
-    # return redirect(url_for('play_page', route_id=0))
+    redirect_url = url_for('play_page', route_id=0)
 
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         return jsonify({'redirect_url': redirect_url})
     else:
         return redirect(redirect_url)
 
+
 @app.route('/score', methods=['POST'])
 def submit_play():
-    print('hello')
+    # print('hello')
     
     # Parse the JSON string from the form field
     submitted_answers = request.form['selected_answers']
