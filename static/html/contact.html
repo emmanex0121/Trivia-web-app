@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Trivia Guru: Mode Select</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/static/assets/images/triviaguru1-CROP.png" />
+
+    <!-- ========= REMIXICONS ============ -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css"
+      crossorigin="" />
+
+    <!-- ========= GOOGLE ICONS ============ -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" href="/static/css/about.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header class="container_header mode_container_header">
+      <div class="icon_header mode_icon-header">
+        <a href="/"><h1>TG</h1></a>
+      </div>
+      <div class="mode_heading">
+        <h1>Trivia Guru</h1>
+      </div>
+    </header>
+
+    <section class="main-about-container">
+      <div class="about-container">
+        <div class="about-container-box">
+          <div class="contact-content">
+            <div class="guru_home-about">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                id="guru-home-video-about"
+                class="guru_home-video-about">
+                <source
+                  src="/static/assets/animations/guru-default.webm"
+                  type="video/webm" />
+                <source
+                  src="/static/assets/animations/guru-default.mp4"
+                  type="video/mp4" />
+                browser does not support
+              </video>
+            </div>
+            <div class="contact-form-container">
+              <h1 class="send-message-text">Send us a Message</h1>
+              <form action="" class="contact__form" id="contact-form">
+                <div class="contact__group">
+                  <div class="contact__box">
+                    <label for="name" class="contact__label">First Name</label>
+
+                    <input
+                      type="text"
+                      name="user_name"
+                      class="contact__input"
+                      id="name"
+                      required
+                      placeholder="First Name" />
+                  </div>
+
+                  <div class="contact__box">
+                    <label for="email" class="contact__label"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      name="user_email"
+                      class="contact__input"
+                      id="email"
+                      required
+                      placeholder="Email Address" />
+                  </div>
+                </div>
+
+                <div class="contact__box">
+                  <label for="subject" class="contact__label">Subject</label>
+
+                  <input
+                    type="text"
+                    name="user_subject"
+                    class="contact__input"
+                    id="subject"
+                    required
+                    placeholder="Subject" />
+                </div>
+
+                <div class="contact__box contact__area">
+                  <label for="message" class="contact__label">Message</label>
+
+                  <textarea
+                    name="user_message"
+                    id="message"
+                    class="contact__input"
+                    required
+                    placeholder="Message"></textarea>
+                </div>
+
+                <p class="contact__message" id="contact-message"></p>
+
+                <button type="submit" class="contact__button button">
+                  <i class="ri-send-plane-line"></i>Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container_footer">
+      <div class="container_foooter-links">
+        <a href="/">Home</a>
+        <a href="./about.html">About</a>
+        <a href="#Contact">Contact Me</a>
+      </div>
+    </footer>
+
+    <!-- ========== EMAIL JS =========== -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script src="/static/scripts/start.js" type="text/javascript"></script>
+    <script src="/static/scripts/contact.js" type="text/javascript"></script>
+  </body>
+</html>

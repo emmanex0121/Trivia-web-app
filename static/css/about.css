@@ -1,0 +1,269 @@
+/* =============== GOOGLE FONTS ============= */
+/* Bai Jamjuree */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap");
+
+/* =============== CDN FONTS ============= */
+/* Samarkan */
+@import url("https://fonts.cdnfonts.com/css/samarkan");
+/* Calibri light */
+@import url("https://fonts.cdnfonts.com/css/calibri-light");
+
+/* =============== CSS VARIABLES ============= */
+:root {
+  /* ============= Colors ============= */
+  /* Color mode HSL(hue, saturation, lightness) */
+  --first-color: hsl(14, 98%, 50%);
+  --black-color: hsl(0, 0%, 0%);
+  --black-color-light: hsl(0, 0%, 40%);
+  --white-color: hsl(0, 0%, 95%);
+  --title-color: hsl(0, 0%, 0%);
+  --text-color: hsl(0, 0%, 35%);
+  --text-color-light: hsl(0, 0%, 64%);
+  --body-color: hsl(0, 0%, 87%);
+  --container-color: hsl(0, 0%, 83%);
+  --yellow-color: #e4bb60;
+  --cream-color: #f2db9f;
+  --purple-color: #6c2faa;
+  --purple-color-light: #bf9ff2;
+
+  /* ============ Font and Typography ============ */
+  /* .5rem = 8px / 1rem = 16px ... */
+  --body-font: "Bai Jamjuree", sans-serif;
+  --hindu-font: "Samarkan", sans-serif;
+  --body-logo-font: "Calibri Light", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --very-small-font-size: 0.5rem;
+  --smallest-font-size: 0.25rem;
+
+  /*=========== Font Weight =================*/
+  --font-very-light: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+/*=================== Responsive Typography ==================*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/* ============= BASE ================= */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  /* height: 100vh;
+
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--black-color); */
+}
+
+.main-about-container {
+  /* text-align: center; */
+  margin-inline: auto;
+  padding: 2rem;
+
+  /* max-width: 1000px; */
+  width: 100%;
+  overflow: hidden;
+}
+
+.about-container {
+  margin-inline: auto;
+  margin-block: 0.5rem;
+  max-width: 1000px;
+
+  width: 100%;
+  min-height: 65vh;
+
+  background-color: #ffffff;
+
+  padding-inline: 5rem;
+  padding-block: 1rem;
+  box-shadow: 0.5rem 0.5rem 2rem 1rem var(--purple-color);
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container-box {
+  max-width: 1000px;
+  width: 100%;
+
+  overflow: hidden;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.about-content,
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.about-text h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.about-text span {
+  font-weight: var(--font-bold);
+}
+
+.guru_home-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.guru_home-video-about {
+  max-width: 15rem;
+}
+
+/* CONTACT SECTION */
+.contact-form-container {
+  max-width: 30rem;
+  width: 100%;
+}
+.send-message-text {
+  margin-bottom: 2rem;
+}
+.contact__group {
+  width: 100%;
+}
+.contact__box {
+  display: flex;
+  flex-direction: column;
+}
+.contact__label {
+  font-weight: var(--font-medium);
+  margin-bottom: 0.2rem;
+}
+.contact__input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-inline: 0.2rem;
+  min-height: 2rem;
+  font-size: var(--small-font-size);
+  /* border-color: var(--black-color); */
+  border: 2px solid var(--black-color);
+  outline: none;
+
+  transition: ease-in-out 0.5s;
+}
+.contact__input:focus {
+  border-color: var(--purple-color);
+  outline: none;
+}
+.contact__input:hover {
+  border-radius: 0.5rem;
+  /* border-color: var(--purple-color); */
+  border: 2px solid var(--purple-color);
+}
+.contact__input::placeholder {
+  padding-inline: 4rem;
+  font-size: var(--small-font-size);
+}
+.contact__input#message {
+  /* margin-bottom: 1rem; */
+  min-height: 5rem;
+  padding-top: 0.2rem;
+}
+.contact__button {
+  cursor: pointer;
+  background-color: var(--black-color);
+  color: var(--white-color);
+
+  margin-top: 1rem;
+  border: 2px solid var(--yellow-color);
+  font-size: var(--h3-font-size);
+  padding: 1rem;
+
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.contact__button:hover {
+  border: 2px solid var(--yellow-color);
+  border-radius: 4px;
+  background-color: var(--purple-color-light);
+}
+
+@media screen and (max-width: 1000px) {
+  .about-container {
+    /* margin-inline: auto; */
+    max-width: 800px;
+
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    padding-inline: 1rem;
+  }
+  .guru_home-video-about {
+    max-width: 10rem;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .about-container {
+    padding-inline: 2rem;
+  }
+  .guru_home-video-about {
+    max-width: 7rem;
+  }
+  .about-content,
+  .contact-content {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about-container {
+    padding-inline: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contact__button {
+    /* margin-top: 1rem; */
+    border: 2px solid var(--black-color);
+    font-size: var(--small-font-size);
+    padding: 1rem;
+  }
+}
