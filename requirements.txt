@@ -15,4 +15,4 @@ Flask-WTF
 Flask-Login
 Flask-Migrate
 python-dotenv
---upgrade urllib3 requests
+# --upgrade urllib3 requests
