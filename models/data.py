@@ -92,6 +92,9 @@ async def get_questions_from_url(url_api, uid):
                 print(f'Unexpected error occurred: {e}')
 
 async def get_question_at_index(index, uid):
+    """
+        gets a question from an index
+    """
     json_file = f'json/request_dump_{uid}.json'
 
     if not os.path.exists(json_file):

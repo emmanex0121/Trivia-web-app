@@ -137,14 +137,27 @@ def results():
     """
     questions = []
 
+
     for item in range(10):
-        question = get_question_at_index(item, secret_key)[0]
-        correct_answer = get_question_at_index(item, secret_key)[1]
-        answers = [get_question_at_index(item, secret_key)[1], get_question_at_index(item, secret_key)[2], get_question_at_index(item, secret_key)[3], get_question_at_index(item, secret_key)[4]]
+        # Run the coroutine and get the result
+        question_data = asyncio.run(get_question_at_index(item, secret_key))
+        
+        if not question_data:
+            continue  # Skip if no data is returned
+        
+        # Unpack the result
+        question = question_data[0]
+        correct_answer = question_data[1]
+        answers = question_data[1:5]  # correct and incorrect answers
         random.shuffle(answers)
-        shuffle_answers = answers
-        questions.append({'question_id': item, 'question': question, 'correct_answer': correct_answer, 'answers': shuffle_answers})
-        # questions_object['item'] = get_question_at_index(item)
+
+        # Add the question data to the list
+        questions.append({
+            'question_id': item,
+            'question': question,
+            'correct_answer': correct_answer,
+            'answers': answers
+        }) # questions_object['item'] = get_question_at_index(item)
     
 
     correct_answers_list = json.dumps(get_correct_answers(secret_key))
@@ -152,7 +165,7 @@ def results():
 
     print (correct_answers_list)
     print (questions[0])
-    print (shuffle_answers)
+    print (answers)
 
     return render_template('results.html', questions=questions, correct_answers_list=correct_answers_list)
 
