@@ -41,15 +41,18 @@ def play_now():
 
     return redirect(url_for('play_page', route_id=0))
 
-@app.route('/play_now/<int:route_id>', strict_slashes=False)
+@app.route('/play_now/<int:route_id>', methods=['GET'], strict_slashes=False)
 def play_page(route_id):
     """
         Play Page
     """
     print("testing")
-    my_list = asyncio.run(get_question_at_index(route_id, secret_key))
-
-    # my_list = await get_question_at_index(route_id, secret_key)
+    # my_list = asyncio.run(get_question_at_index(route_id, secret_key))
+    try:
+        my_list = asyncio.run(get_question_at_index(route_id, secret_key))
+    except Exception as e:
+        print(f"Error retrieving question at index {route_id}: {e}")
+        return "Error retrieving question", 500
 
     if not my_list:
         return "No questions and answers available", 404
@@ -84,9 +87,18 @@ def submit_mode():
         url += f'&difficulty={difficulty}'
     if category != 'any':
         url += f'&category={category}'
+    url += '&type=multiple'
 
     # Ensure the async function completes
     asyncio.run(get_questions_from_url(url, secret_key))
+
+    # Verify the contents of the file
+    json_file = f'json/request_dump_{secret_key}.json'
+    if os.path.exists(json_file):
+        with open(json_file, 'r', encoding='utf-8') as file:
+            saved_data = json.load(file)
+            print(f"Number of questions in the saved file: {len(saved_data)}")
+    
     
     redirect_url = url_for('play_page', route_id=0)
 

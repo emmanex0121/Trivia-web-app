@@ -66,10 +66,14 @@ def secret_key():
 
 
 async def get_questions_from_url(url_api, uid):
+    """
+    Gets questions and ansers from the url and saves them in a json file
+    """
     async with aiohttp.ClientSession() as session:
         async with session.get(url_api) as response:
             data = await response.json()
             data = data.get('results', [])
+            print(f"Fetched {len(data)} questions")
 
             new_data = [
                 {'question': index['question'],
@@ -77,6 +81,8 @@ async def get_questions_from_url(url_api, uid):
                  'incorrect_answers': index['incorrect_answers']}
                 for index in data
             ]
+            print(f"Fetched {len(new_data)} questions-new_data")
+
 
             json_file = f'json/request_dump_{uid}.json'
 
@@ -86,7 +92,8 @@ async def get_questions_from_url(url_api, uid):
 
                 async with aiofiles.open(json_file, 'w', encoding='utf-8') as file:
                     await file.write(json.dumps(new_data))
-                print('File saved successfully')
+                # print('File saved successfully')
+                print(f"Saved {len(new_data)} questions to {json_file}")
 
             except Exception as e:
                 print(f'Unexpected error occurred: {e}')
@@ -104,9 +111,21 @@ async def get_question_at_index(index, uid):
     try:
         async with aiofiles.open(json_file, 'r', encoding='utf-8') as file:
             json_data = json.loads(await file.read())
-            print("File loaded successfully")
+            print(f"File loaded successfully from {json_file}")
+            print(f"Number of questions in the file: {len(json_data)}")
+
+            if len(json_data) <= index:
+                print(f"Requested index {index} is out of range.")
+                return []
 
             data = json_data[index]
+            print(f"Fetched question data at index {index}: {data}")
+
+            # Verify the structure
+            if 'question' not in data or 'correct_answer' not in data or len(data.get('incorrect_answers', [])) < 3:
+                print(f"Question data at index {index} is missing expected fields or has insufficient incorrect answers.")
+                return []
+
             questions_answers_list = [
                 data['question'],
                 data['correct_answer'],

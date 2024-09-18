@@ -27,6 +27,7 @@ $(document).ready(function () {
   // Increment route ID and navigate to next route
   $(".button_next").click(function () {
     route++;
+    // console.log("route", route);
 
     sessionStorage.setItem("route_id", route.toString());
     window.location.href = "/play_now/" + route;
